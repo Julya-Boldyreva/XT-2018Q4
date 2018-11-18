@@ -1,0 +1,7 @@
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\bin\Debug\Epam.Task1.Square.exe.config
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\bin\Debug\Epam.Task1.Square.exe
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\bin\Debug\Epam.Task1.Square.pdb
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\obj\Debug\Epam.Task1.Square.csprojAssemblyReference.cache
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\obj\Debug\Epam.Task1.Square.csproj.CoreCompileInputs.cache
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\obj\Debug\Epam.Task1.Square.exe
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Square\obj\Debug\Epam.Task1.Square.pdb

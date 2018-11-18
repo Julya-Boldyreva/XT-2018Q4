@@ -1,0 +1,7 @@
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.exe.config
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.exe
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.pdb
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.csprojAssemblyReference.cache
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.csproj.CoreCompileInputs.cache
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.exe
+D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.pdb
