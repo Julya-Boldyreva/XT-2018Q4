@@ -5,3 +5,10 @@ D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.c
 D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.csproj.CoreCompileInputs.cache
 D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.exe
 D:\XT-2018Q4\ДЗ\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.pdb
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.csprojAssemblyReference.cache
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.csproj.CoreCompileInputs.cache
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.exe
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\obj\Debug\Epam.Task1.Sequence.pdb
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.exe.config
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.exe
+C:\Users\Юля\Documents\GitHub\XT-2018Q4\Epam.Task1\Epam.Task1.Sequence\bin\Debug\Epam.Task1.Sequence.pdb

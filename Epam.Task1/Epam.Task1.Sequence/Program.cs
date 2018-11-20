@@ -8,21 +8,42 @@ namespace Epam.Task1.Sequence
 {
     class Program
     {
-        static string allnums(int N)
+        static void allnums(int N)
         {
-            string str = "";
             for (int i = 1; i <= N; i++)
             {
-                str += i;
+                Console.Write(i);
+                if (i != N)
+                {
+                    Console.Write(", ");
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                } 
             }
-            return str;
         }
 
         static void Main(string[] args)
         {
-            //simple examples to demonstrate the method
-            Console.WriteLine("Sequence");
-            Console.WriteLine(allnums(7));
+            try
+            {
+                Console.WriteLine("This program prints to the screen sequence of numbers until the N.\n So, please, enter the N.");
+                int a;
+                do
+                {
+                    Console.WriteLine("N must be positive integer number: ");
+                    a = int.Parse(Console.ReadLine());
+                } while (a <= 0);
+                allnums(a);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("There are en error occured: \n" + e.Message);
+                Console.WriteLine("Tap any key to exit program");
+                Console.ReadKey();
+            }
+           
         }
     }
 }

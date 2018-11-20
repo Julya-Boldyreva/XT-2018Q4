@@ -28,9 +28,24 @@ namespace Epam.Task1.Square
         }
         static void Main(string[] args)
         {
-            //simple examples to demonstrate the method
-            Console.WriteLine("Square Stars Without One");
-            stars(7);
+            
+            try
+            {
+             Console.WriteLine("Square Stars Without One");
+                int a;
+                do
+                {
+                    Console.WriteLine("N must be positive odd integer number more than 1: ");
+                    a = int.Parse(Console.ReadLine());
+                } while (a % 2 == 0 || a <=1);
+                stars(a);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("There are en error occured: \n" + e.Message);
+                Console.WriteLine("Tap any key to exit program");
+                Console.ReadKey();
+            }
         }
     }
 }
