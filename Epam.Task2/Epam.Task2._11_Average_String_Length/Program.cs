@@ -11,33 +11,30 @@ namespace Epam.Task2._11_Average_String_Length
         static double AverageLen(string str)
         {
             double countOfWords = 0, sumOfLen = 0;
+            int nonLetter = 0;
 
             for (int i = 0; i < str.Length; i++)
             {
-                if (!char.IsPunctuation(str[i]) && !char.IsSeparator(str[i]))
+                if (char.IsPunctuation(str[i]) || char.IsSeparator(str[i]))
                 {
-                    sumOfLen++;
-                    if (i == str.Length - 1)
-                    {
-                        countOfWords++;
-                    }
-                    if (i == str.Length || i<str.Length-1 && (char.IsPunctuation(str[i+1]) || char.IsSeparator(str[i+1])))
-                    {
-                        countOfWords++;
-                    }
-                }
-                else
-                {
-                    while (i < str.Length - 1 && (char.IsPunctuation(str[i]) || char.IsSeparator(str[i])))
-                    {
-                        i++;                        
-                    }
-                    i--;
-                    
+                    nonLetter++;
                 }
             }
-            Console.WriteLine($"Common len = {sumOfLen};{Environment.NewLine}Words = {countOfWords}");
-            Console.WriteLine("------");
+            sumOfLen = str.Length - nonLetter;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                while (i <= str.Length - 1 && (char.IsPunctuation(str[i]) || char.IsSeparator(str[i]))) //separate in start
+                {
+                    i++;
+                }
+                while (i <= str.Length - 1 && (!char.IsPunctuation(str[i]) && !char.IsSeparator(str[i])))//some word
+                {
+                    i++;
+                }
+                countOfWords++;
+            }
+
             return sumOfLen / countOfWords;
         }
         static void Main(string[] args)
