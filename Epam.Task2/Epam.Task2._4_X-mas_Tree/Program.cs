@@ -8,7 +8,7 @@ namespace Epam.Task2._4_X_mas_Tree
 {
     class Program
     {
-        static void star(int n, int space)
+        static void Star(int n, int space)
         {
             for (int i = 1; i <= n; i++)
             {
@@ -24,11 +24,11 @@ namespace Epam.Task2._4_X_mas_Tree
             }
         }
 
-        static void tree(int a)
+        static void Tree(int a)
         {
             for (int i = 1; i <= a; i++)
             {
-                star(i, a-i);
+                Star(i, a-i);
             }
         }
 
@@ -39,7 +39,7 @@ namespace Epam.Task2._4_X_mas_Tree
                 Console.WriteLine("This program print X-mas tree");
                 Console.WriteLine("Please, enter number of triangles:");
                 int a = int.Parse(Console.ReadLine());
-                tree(a);
+                Tree(a);
             }
             catch (Exception e)
             {

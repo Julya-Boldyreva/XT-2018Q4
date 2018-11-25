@@ -8,7 +8,7 @@ namespace Epam.Task2.Triangle
 {
     class Program
     {
-        static void star(int n)
+        static void Star(int n)
         {
             for (int i = 1; i <= n; i++)
             {
@@ -26,7 +26,7 @@ namespace Epam.Task2.Triangle
                 Console.WriteLine("This program print *-triangle");
                 Console.WriteLine("Please, enter number of lines:");
                 int a = int.Parse(Console.ReadLine());
-                star(a);
+                Star(a);
             }
             catch (Exception e)
             {

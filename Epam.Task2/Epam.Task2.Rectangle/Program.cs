@@ -8,7 +8,7 @@ namespace Epam.Task2.Rectangle
 {
     class Program
     {
-        static double area(double a, double b) => a * b;
+        static double Area(double a, double b) => a * b;
            
         
         static void Main(string[] args)
@@ -30,7 +30,7 @@ namespace Epam.Task2.Rectangle
                         Console.WriteLine("Incorrect! One of operators less or equals than zero. Please, repeat enter");
                     }
                 } while (a <= 0 || b <= 0);
-                Console.WriteLine($"area of rectangle with sides {a} ana {b} is {area(a,b)}");
+                Console.WriteLine($"area of rectangle with sides {a} ana {b} is {Area(a,b)}");
             }
             catch (Exception e)
             {
