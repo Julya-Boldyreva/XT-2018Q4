@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._10_2D_Array
 {
-    class Program
+    public class Program
     {
-        static int[,] Generate(int width, int height, int min, int max)
+        public static int[,] Generate(int width, int height, int min, int max)
         {
             int[,] arr = new int[width, height];
             Random r = new Random();
@@ -20,9 +20,11 @@ namespace Epam.Task2._10_2D_Array
                     arr[i, j] = r.Next(min, max);
                 }
             }
+
             return arr;
         }
-        static void PrintDoubleArray(int[,] arr)
+
+        public static void PrintDoubleArray(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
@@ -30,10 +32,12 @@ namespace Epam.Task2._10_2D_Array
                 {
                      Console.Write($"{arr[i, j]} ");
                 }
+
                 Console.Write(Environment.NewLine);
             }
         }
-        static int Sum(int[,] arr)
+
+        public static int Sum(int[,] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -46,10 +50,11 @@ namespace Epam.Task2._10_2D_Array
                     }
                 }
             }
+
             return sum;
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int width = 0, height = 0, min = 0, max = 0;
             Console.WriteLine("To start program, we need to form 2D array");
@@ -70,7 +75,8 @@ namespace Epam.Task2._10_2D_Array
                     {
                         Console.WriteLine("Width and height of array must be positive! Please, repeate the entrance:");
                     }
-                } while (width <= 0 || height <= 0);
+                }
+                while (width <= 0 || height <= 0);
                 int[,] arr = Generate(width, height, min, max);
                 Console.WriteLine($"Array is:");
                 PrintDoubleArray(arr);

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1.Square
 {
-    class Program
+    public class Program
     {
-        static void stars(int N)
+        public static void Stars(int n)
         {
-            for (int i = 1; i <= N; i++)
+            for (int i = 1; i <= n; i++)
             {
-                for (int j = 1; j <= N; j++)
+                for (int j = 1; j <= n; j++)
                 {
-                    if (i != (N / 2 + 1) || j != (N / 2 + 1))
+                    if (i != (n / 2 + 1) || j != (n / 2 + 1))
                     {
                         Console.Write("*");
                     }
@@ -23,12 +23,13 @@ namespace Epam.Task1.Square
                         Console.Write(" ");
                     }
                 }
+
                 Console.WriteLine();
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            
             try
             {
              Console.WriteLine("Square Stars Without One");
@@ -37,8 +38,10 @@ namespace Epam.Task1.Square
                 {
                     Console.WriteLine("N must be positive odd integer number more than 1: ");
                     a = int.Parse(Console.ReadLine());
-                } while (a % 2 == 0 || a <=1);
-                stars(a);
+                }
+                while (a % 2 == 0 || a <= 1);
+
+                Stars(a);
             }
             catch (Exception e)
             {

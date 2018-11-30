@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._6_Font_Ajustment
 {
-    class Program
+    public class Program
     {
         [Flags]
-        enum Font
+        public enum Font
         {
             none = 0x0,
             bold = 0x1,
@@ -17,10 +17,9 @@ namespace Epam.Task2._6_Font_Ajustment
             underline = 0x4
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
-            Font currentFont = Font.none; //Font.none | Font.bold | Font.italic | Font.underline;//Font.none;
+            Font currentFont = Font.none; 
             Font switch_on;
             try
             {
@@ -40,6 +39,7 @@ namespace Epam.Task2._6_Font_Ajustment
                     {
                         switch_on = (Font)4;
                     }
+
                     switch (switch_on)
                     {
                         case Font.bold:
@@ -52,7 +52,9 @@ namespace Epam.Task2._6_Font_Ajustment
                                 {
                                     currentFont |= Font.bold;
                                 }
-                            }; break;
+                            }
+
+                            break;
                         case Font.italic:
                             {
                                 if (currentFont.HasFlag(Font.italic))
@@ -63,7 +65,9 @@ namespace Epam.Task2._6_Font_Ajustment
                                 {
                                     currentFont |= Font.italic;
                                 }
-                            }; break;
+                            }
+
+                            break;
                         case Font.underline:
                             {
                                 if (currentFont.HasFlag(Font.underline))
@@ -74,9 +78,16 @@ namespace Epam.Task2._6_Font_Ajustment
                                 {
                                     currentFont |= Font.underline;
                                 }
-                            }; break;
-                        default: { }; break;
+                            }
+
+                            break;
+                        default:
+                            {
+                            }
+
+                            break;
                     }
+
                     Console.WriteLine();
                     Console.Clear();
                 }
@@ -86,7 +97,6 @@ namespace Epam.Task2._6_Font_Ajustment
                 Console.WriteLine("------");
                 Console.WriteLine($"Error has occured! {e.Message}");
             }
-
         }
     }
 }

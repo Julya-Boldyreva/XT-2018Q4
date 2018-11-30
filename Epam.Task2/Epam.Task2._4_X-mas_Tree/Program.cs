@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._4_X_mas_Tree
 {
-    class Program
+    public class Program
     {
-        static void Star(int n, int space)
+        public static void Star(int n, int space)
         {
             for (int i = 1; i <= n; i++)
             {
@@ -16,23 +16,25 @@ namespace Epam.Task2._4_X_mas_Tree
                 {
                     Console.Write(" ");
                 }
+
                 for (int j = 1; j < i * 2; j++)
                 {
                     Console.Write("*");
                 }
+
                 Console.Write(Environment.NewLine);
             }
         }
 
-        static void Tree(int a)
+        public static void Tree(int a)
         {
             for (int i = 1; i <= a; i++)
             {
-                Star(i, a-i);
+                Star(i, a - i);
             }
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             try
             {

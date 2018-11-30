@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1.Simple
 {
-
-    class Program
+    public class Program
     {
-        static bool simple(int N)
+        public static bool Simple(int n)
         {
             bool res = true;
-            for (int i = 2; i < N; i++)
+            for (int i = 2; i < n; i++)
             {
-                if (N % i == 0)
+                if (n % i == 0)
                 {
                     res = false;
                     break;
                 }
             }
+
             return res;
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             try
             {
@@ -32,9 +33,10 @@ namespace Epam.Task1.Simple
                 {
                     Console.WriteLine("N must be positive integer number more than 1: ");
                     a = int.Parse(Console.ReadLine());
-                } while (a < 2);
+                }
+                while (a < 2);
 
-                Console.WriteLine(a + " is simple? - " + simple(a));
+                Console.WriteLine(a + " is simple? - " + Simple(a));
             }
             catch (Exception e)
             {
@@ -42,7 +44,6 @@ namespace Epam.Task1.Simple
                 Console.WriteLine("Tap any key to exit program");
                 Console.ReadKey();
             }
-        }
-            
+        }  
     }
 }

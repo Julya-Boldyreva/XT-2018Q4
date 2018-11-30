@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._11_Average_String_Length
 {
-    class Program
+    public class Program
     {
-        static double AverageLen(string str)
+        public static double AverageLen(string str)
         {
             double countOfWords = 0, sumOfLen = 0;
             int nonLetter = 0;
@@ -20,24 +20,30 @@ namespace Epam.Task2._11_Average_String_Length
                     nonLetter++;
                 }
             }
+
             sumOfLen = str.Length - nonLetter;
 
             for (int i = 0; i < str.Length; i++)
             {
-                while (i <= str.Length - 1 && (char.IsPunctuation(str[i]) || char.IsSeparator(str[i]))) //separate in start
+                // separate in start
+                while (i <= str.Length - 1 && (char.IsPunctuation(str[i]) || char.IsSeparator(str[i])))
                 {
                     i++;
                 }
-                while (i <= str.Length - 1 && (!char.IsPunctuation(str[i]) && !char.IsSeparator(str[i])))//some word
+
+                // some word
+                while (i <= str.Length - 1 && (!char.IsPunctuation(str[i]) && !char.IsSeparator(str[i])))
                 {
                     i++;
                 }
+
                 countOfWords++;
             }
 
             return sumOfLen / countOfWords;
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             Console.WriteLine("/any symbol besides punctuations and serarations is word/");
             Console.WriteLine("Enter a string to know the average of it:");

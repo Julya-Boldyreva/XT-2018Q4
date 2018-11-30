@@ -6,24 +6,27 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2.Another_Triangle
 {
-    class Program
+    public class Program
     {
-        static void Star(int n)
+        public static void Star(int n)
         {
             for (int i = 1; i <= n; i++)
             {
                 for (int j = n - i; j > 0; j--)
                 {
                     Console.Write(" ");
-                } 
+                }
+
                 for (int j = 1; j < i * 2; j++)
                 {
                     Console.Write("*");
                 }
+
                 Console.Write(Environment.NewLine);
             }
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             try
             {

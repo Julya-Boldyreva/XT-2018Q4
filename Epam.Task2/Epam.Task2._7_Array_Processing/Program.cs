@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._7_Array_Processing
 {
-    class Program
+    public class Program
     {
-        static int[] Generate(int N, int min, int max)
+        public static int[] Generate(int n, int min, int max)
         {
-            int[] arr = new int[N];
+            int[] arr = new int[n];
             Random r = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = r.Next(min, max);
             }
+
             return arr;
         }
-        static int Max(int[] arr)
+
+        public static int Max(int[] arr)
         {
             int res = arr[0];
             for (int i = 1; i < arr.Length; i++)
@@ -28,9 +30,11 @@ namespace Epam.Task2._7_Array_Processing
                     res = arr[i];
                 }
             }
+
             return res;
         }
-        static int Min(int[] arr)
+
+        public static int Min(int[] arr)
         {
             int res = arr[0];
             for (int i = 1; i < arr.Length; i++)
@@ -40,16 +44,18 @@ namespace Epam.Task2._7_Array_Processing
                     res = arr[i];
                 }
             }
+
             return res;
         }
-        static void Sort(ref int[] arr)
+
+        public static void Sort(ref int[] arr)
         {
             int tmp = arr[0];
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
-                    if (arr[j] > arr[j+1])
+                    if (arr[j] > arr[j + 1])
                     {
                         tmp = arr[j];
                         arr[j] = arr[j + 1];
@@ -59,10 +65,8 @@ namespace Epam.Task2._7_Array_Processing
             }
         }
 
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
             const int N = 10;
             const int MIN = -100;
             const int MAX = 100;
@@ -72,6 +76,7 @@ namespace Epam.Task2._7_Array_Processing
             {
                 Console.Write($"{i} ");
             }
+
             Console.Write(Environment.NewLine);
             Console.WriteLine("------");
             Console.WriteLine($"Max = {Max(arr)}; {Environment.NewLine}Min = {Min(arr)};");
@@ -82,6 +87,7 @@ namespace Epam.Task2._7_Array_Processing
             {
                 Console.Write($"{i} ");
             }
+
             Console.WriteLine();
         }
     }

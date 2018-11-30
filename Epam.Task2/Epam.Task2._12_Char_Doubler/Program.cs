@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._12_Char_Doubler
 {
-    class Program
+    public class Program
     {
-        static string DoubleMaker(string main, string key)
+        public static string DoubleMaker(string main, string key)
         {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < main.Length; i++)
@@ -22,9 +22,11 @@ namespace Epam.Task2._12_Char_Doubler
                     sb.Append(main[i], 2);
                 }
             }
+
             return sb.ToString();
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             Console.WriteLine("Char doubler program");
             Console.WriteLine("Please, enter the main string: ");
@@ -32,7 +34,7 @@ namespace Epam.Task2._12_Char_Doubler
             Console.WriteLine("Please, enter the key string: ");
             string key = Console.ReadLine();
             Console.WriteLine("------");
-            Console.WriteLine(DoubleMaker(main,key));
+            Console.WriteLine(DoubleMaker(main, key));
         }
     }
 }

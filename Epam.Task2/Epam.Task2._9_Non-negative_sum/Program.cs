@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._9_Non_negative_sum
 {
-    class Program
+    public class Program
     {
-        static int[] Generate(int N, int min, int max)
+        public static int[] Generate(int n, int min, int max)
         {
-            int[] arr = new int[N];
+            int[] arr = new int[n];
             Random r = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = r.Next(min, max);
             }
+
             return arr;
         }
-        static int Sum(int[] arr)
+
+        public static int Sum(int[] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.Length; i++)
@@ -28,9 +30,11 @@ namespace Epam.Task2._9_Non_negative_sum
                     sum += arr[i];
                 }
             }
+
             return sum;
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             const int N = 10;
             const int MIN = -100;
@@ -41,6 +45,7 @@ namespace Epam.Task2._9_Non_negative_sum
             {
                 Console.Write($"{i} ");
             }
+
             Console.Write(Environment.NewLine);
             Console.WriteLine("------");
             Console.WriteLine($"Sum of positive elements is: {Sum(arr)}");

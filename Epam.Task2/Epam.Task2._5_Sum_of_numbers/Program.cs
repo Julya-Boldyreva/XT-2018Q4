@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task2._5_Sum_of_numbers
 {
-    class Program
+    public class Program
     {
-        static int SumOfCommons3Or5(int n)
+        public static int SumOfCommons3Or5(int n)
         {
             int res = 0;
             for (int i = 1; i < n; i++)
@@ -18,9 +18,11 @@ namespace Epam.Task2._5_Sum_of_numbers
                     res += i;
                 }
             }
+
             return res;
         }
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             const int N = 1000;
             Console.WriteLine($"Sum of numbers with 3 or 5 commons (from 1 to {N}) is {SumOfCommons3Or5(N)}");

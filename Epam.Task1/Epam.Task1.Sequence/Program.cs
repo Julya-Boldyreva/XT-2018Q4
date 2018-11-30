@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Epam.Task1.Sequence
 {
-    class Program
+    public class Program
     {
-        static void allnums(int N)
+        public static void Allnums(int n)
         {
-            for (int i = 1; i <= N; i++)
+            for (int i = 1; i <= n; i++)
             {
                 Console.Write(i);
-                if (i != N)
+                if (i != n)
                 {
                     Console.Write(", ");
                 }
@@ -24,18 +24,20 @@ namespace Epam.Task1.Sequence
             }
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             try
             {
                 Console.WriteLine("This program prints to the screen sequence of numbers until the N.\n So, please, enter the N.");
-                int a;
+                int n;
                 do
                 {
                     Console.WriteLine("N must be positive integer number: ");
-                    a = int.Parse(Console.ReadLine());
-                } while (a <= 0);
-                allnums(a);
+                    n = int.Parse(Console.ReadLine());
+                }
+                while (n <= 0);
+
+                Allnums(n);
             }
             catch (Exception e)
             {
@@ -43,7 +45,6 @@ namespace Epam.Task1.Sequence
                 Console.WriteLine("Tap any key to exit program");
                 Console.ReadKey();
             }
-           
         }
     }
 }
