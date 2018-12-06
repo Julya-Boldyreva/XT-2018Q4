@@ -8,5 +8,9 @@ namespace Epam.Task3._8_Game
 {
     class DifficultTree : IDiffucult
     {
+        public void Show(int a, int b)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

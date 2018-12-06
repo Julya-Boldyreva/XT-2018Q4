@@ -6,33 +6,24 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class Hero :
+    class Hero: IMovable, IShootable
     {
         public string name;
         int x;
         int y;
 
-        public Hero(string name)
-        {
-            this.name = name;
-        }
-
-        public void MoveTo(int x, int y);
+        public Hero()
         {
         }
 
-        public void MoveOn(int x, int y);
+        public void MoveIn(int x, int y)
         {
-            if (x < Game.Width)
-	        {
-                this.x += x;
+            throw new NotImplementedException();
+        }
 
-            }
-
-            if (y < Game.Height)
-	        {
-                this.y += y;
-            }
+        public void MoveTo(int x, int y)
+        {
+            throw new NotImplementedException();
         }
     }
 }

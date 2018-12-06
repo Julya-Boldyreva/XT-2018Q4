@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Epam.Task3._8_Game
+namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    interface IDiffucult
+    interface IShootable
     {
-        void Show(int a, int b);
+        void Shoot();
     }
 }

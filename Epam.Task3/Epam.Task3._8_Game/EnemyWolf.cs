@@ -8,5 +8,19 @@ namespace Epam.Task3._8_Game
 {
     class EnemyWolf : IEnemy
     {
+        public void DestroyHero()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MoveIn(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MoveTo(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

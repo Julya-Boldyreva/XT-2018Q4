@@ -10,23 +10,7 @@ namespace Epam.Task3._8_Game
     {
         int width;
         int height;
-
-        public static int Width
-        {
-            get
-            {
-                return this.width;
-            }
-        }
-
-        public static int Height
-        {
-            get
-            {
-                return this.height;
-            }
-        }
-
+        
         public Game(int width, int height)
         {
             this.width = width;

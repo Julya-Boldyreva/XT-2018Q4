@@ -49,10 +49,13 @@
     <Compile Include="DifficultTree.cs" />
     <Compile Include="EnemyBear.cs" />
     <Compile Include="EnemyWolf.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="IBonus.cs" />
     <Compile Include="IDiffucult.cs" />
     <Compile Include="IEnemy.cs" />
+    <Compile Include="IMovable.cs" />
+    <Compile Include="IShootable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

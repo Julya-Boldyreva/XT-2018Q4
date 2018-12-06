@@ -8,5 +8,11 @@ namespace Epam.Task3._8_Game
 {
     interface IEnemy
     {
+        void DestroyHero();
+
+        void MoveTo(int x, int y);
+
+        void MoveIn(int x, int y);
+
     }
 }

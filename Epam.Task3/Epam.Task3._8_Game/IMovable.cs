@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    interface IDiffucult
+    interface IMovable
     {
-        void Show(int a, int b);
+        void MoveTo(int x, int y);
+        void MoveIn(int x, int y);
     }
 }
