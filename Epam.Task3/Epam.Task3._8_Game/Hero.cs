@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class Hero
+    class Hero :
     {
         public string name;
         int x;
@@ -19,15 +19,6 @@ namespace Epam.Task3._8_Game
 
         public void MoveTo(int x, int y);
         {
-            if (x >= 0 && x < Game.Width)
-	        {
-                this.x = x;
-	        }
-
-            if (y >= 0 && y < Game.Height)
-	        {
-                this.y = y;
-            }
         }
 
         public void MoveOn(int x, int y);
