@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    class Editor : IEditorable
+    public class Editor : IEditorable
     {
-        public List<Figure> figures;
-
-        public void CreateFigure(Figure f)
+        public void CreateFigure(Figure f, List<Figure> figures)
         {
             figures.Add(f);
         }
@@ -20,23 +18,20 @@ namespace Epam.Task3._7_VectorGraphicsEditor
             f.PrintFigure();
         }
 
-        public void PrintFigures()
+        public void PrintFigures(List<Figure> figures)
         {
             Console.WriteLine("Your figures: ");
-            int i = 0;
-            foreach (var item in figures)
+            if (figures.Count() == 0)
             {
-                Console.WriteLine($"{i}) {item.name}");
+                Console.WriteLine("You\'ve not created figures yet");
+            }
+            else
+            {
+                foreach (var item in figures)
+                {
+                    Console.WriteLine($"- {item}");
+                }
             }
         }
-
-        public List<Figure> Figures
-        {
-            get
-            {
-                return this.figures;
-            }
-        }
-
     }
 }

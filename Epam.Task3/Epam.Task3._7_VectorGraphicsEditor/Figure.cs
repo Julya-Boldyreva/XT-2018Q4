@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    public class Figure: IFigure
+    public class Figure : IFigure
     {
         public string name = "-FIGURE-";
 
         protected double x1;
         protected double y1;
 
-        public virtual void  PrintFigure()
+        public virtual void PrintFigure()
         {
             Console.WriteLine("Class Figure");
         }

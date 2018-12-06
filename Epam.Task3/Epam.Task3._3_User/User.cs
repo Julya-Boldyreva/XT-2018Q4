@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._3_User
 {
-    class User
+    public class User
     {
         private string name;
         private string middleName;
@@ -24,10 +24,70 @@ namespace Epam.Task3._3_User
         public User(string name, string middleName, string lastName, string dateOfBirth)
             : this()
         {
-            this.name = CheckName(name);
-            this.middleName = CheckName(middleName);
-            this.lastName = CheckName(lastName);
+            this.name = this.CheckName(name);
+            this.middleName = this.CheckName(middleName);
+            this.lastName = this.CheckName(lastName);
             this.dateOfBirdth = GetDate(dateOfBirth);
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                this.name = this.CheckName(value);
+            }
+        }
+
+        public string MiddleName
+        {
+            get
+            {
+                return this.middleName;
+            }
+
+            set
+            {
+                this.middleName = this.CheckName(value);
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+
+            set
+            {
+                this.lastName = this.CheckName(value);
+            }
+        }
+
+        public DateTime DateOfBirth
+        {
+            get
+            {
+                return this.dateOfBirdth;
+            }
+
+            set
+            {
+                this.dateOfBirdth = value;
+            }
+        }
+
+        public double Age
+        {
+            get
+            {
+                return (DateTime.Now - this.DateOfBirth).TotalDays / 365;
+            }
         }
 
         public static DateTime GetDate(string date)
@@ -37,7 +97,6 @@ namespace Epam.Task3._3_User
             int month = int.Parse(dateArr[1]);
             int day = int.Parse(dateArr[2]);
             return new DateTime(year, month, day);
-
         }
 
         private string CheckName(string name)
@@ -49,63 +108,8 @@ namespace Epam.Task3._3_User
                     throw new Exception("Name / Middle name / Last name must contain only letters or \'-\' sign");
                 }
             }
+
             return name;
-        }
-
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                this.name = CheckName(value);
-            }
-        }
-
-        public string MiddleName
-        {
-            get
-            {
-                return this.middleName;
-            }
-            set
-            {
-                this.middleName = CheckName(value);
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return this.lastName;
-            }
-            set
-            {
-                this.lastName = CheckName(value);
-            }
-        }
-
-        public DateTime DateOfBirth
-        {
-            get
-            {
-                return this.dateOfBirdth;
-            }
-            set
-            {
-                this.dateOfBirdth = value;
-            }
-        }
-
-        public double Age
-        {
-            get
-            {
-                return (DateTime.Now - DateOfBirth).TotalDays / 365;
-            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class DifficultStone : IDiffucult
+    public class DifficultStone : IDiffucult
     {
         public void Show(int a, int b)
         {

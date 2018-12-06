@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._5_Employee
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Are you an employeer? Tell us about you!");
             try

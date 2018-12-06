@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._6_Ring
 {
-    class Round
+    public class Round
     {
         protected double x;
         protected double y;
@@ -36,37 +36,40 @@ namespace Epam.Task3._6_Ring
 
         public double X
         {
-            set
-            {
-                this.x = value;
-            }
             get
             {
                 return this.x;
+            }
+
+            set
+            {
+                this.x = value;
             }
         }
 
         public double Y
         {
-            set
-            {
-                this.y = value;
-            }
             get
             {
                 return this.y;
+            }
+
+            set
+            {
+                this.y = value;
             }
         }
 
         public double Radius
         {
-            set
-            {
-                this.radius = value;
-            }
             get
             {
                 return this.radius;
+            }
+
+            set
+            {
+                this.radius = value;
             }
         }
 

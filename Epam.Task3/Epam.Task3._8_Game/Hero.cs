@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class Hero: IMovable, IShootable
+    public class Hero : IMovable, IShootable
     {
-        public string name;
-        int x;
-        int y;
+        private string name;
+        private int x;
+        private int y;
 
         public Hero()
         {

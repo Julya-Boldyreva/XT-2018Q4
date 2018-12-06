@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    class Rectangle : Figure
+    public class Rectangle : Figure
     {
         protected double a;
         protected double b;
 
         public Rectangle()
         {
-            name = "RECTANGLE";
+            this.name = "RECTANGLE";
             this.x1 = 0;
             this.y1 = 0;
             this.a = 1;
@@ -22,7 +22,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Rectangle(double x1, double y1, double a, double b)
         {
-            name = "RECTANGLE";
+            this.name = "RECTANGLE";
             this.x1 = x1;
             this.y1 = y1;
             this.a = a;
@@ -44,8 +44,12 @@ namespace Epam.Task3._7_VectorGraphicsEditor
             double a = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter rectangle height");
             double b = double.Parse(Console.ReadLine());
-            Rectangle myRectangle = new Rectangle(x, y, a, b);
-            return myRectangle;
+            return new Rectangle(x, y, a, b);
+        }
+
+        public override string ToString()
+        {
+            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] width: " + this.a + ", height " + this.b + ")";
         }
     }
 }

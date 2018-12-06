@@ -8,7 +8,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 {
     public interface IEditorable
     {
-        void CreateFigure(Figure f);
+        void CreateFigure(Figure f, List<Figure> figures);
 
         void PrintFigure(Figure f);
     }

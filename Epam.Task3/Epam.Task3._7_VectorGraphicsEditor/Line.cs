@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    class Line : Figure
+    public class Line : Figure
     {
         protected double x2;
         protected double y2;
 
         public Line()
         {
-            name = "LINE";
+            this.name = "LINE";
             this.x2 = 0;
             this.y2 = 0;
             this.x2 = 1;
@@ -22,7 +22,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Line(double x1, double y1, double x2, double y2)
         {
-            name = "LINE";
+            this.name = "LINE";
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
@@ -44,8 +44,12 @@ namespace Epam.Task3._7_VectorGraphicsEditor
             double x2 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter second y-coordinate");
             double y2 = double.Parse(Console.ReadLine());
-            Line myLine = new Line(x1, y1, x2, x2);
-            return myLine;
+            return new Line(x1, y1, x2, x2);
+        }
+
+        public override string ToString()
+        {
+            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "; " + this.x2 + ", " + this.x2 + "])";
         }
     }
 }

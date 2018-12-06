@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._6_Ring
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("This proram for calculating ring parameters. Please, enter parametrs");
             try

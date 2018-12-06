@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class BonusApple : IBonus
+    public class BonusApple : IBonus
     {
     }
 }

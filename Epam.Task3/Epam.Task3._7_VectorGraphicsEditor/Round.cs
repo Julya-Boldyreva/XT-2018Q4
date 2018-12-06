@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    class Round : Circle
+    public class Round : Circle
     {
         protected string color = "black";
 
         public Round()
         {
-            name = "ROUND";
+            this.name = "ROUND";
             this.x1 = 0;
             this.y1 = 0;
             this.radius = 1;
@@ -21,7 +21,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
         public Round(double x1, double y1, double radius, string color)
             : base(x1, y1, radius)
         {
-            name = "ROUND";
+            this.name = "ROUND";
             this.color = color;
         }
 
@@ -40,8 +40,12 @@ namespace Epam.Task3._7_VectorGraphicsEditor
             double radius = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter color");
             string color = Console.ReadLine();
-            Round myRound = new Round(x, y, radius, color);
-            return myRound;
+            return new Round(x, y, radius, color);
+        }
+
+        public override string ToString()
+        {
+            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius: " + this.radius + ", color: " + this.color + ")";
         }
     }
 }

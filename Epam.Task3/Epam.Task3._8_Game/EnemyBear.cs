@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    class EnemyBear : IEnemy
+    public class EnemyBear : IEnemy
     {
         public void DestroyHero()
         {

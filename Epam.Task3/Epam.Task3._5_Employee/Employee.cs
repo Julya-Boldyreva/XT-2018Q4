@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._5_Employee
 {
-    class Employee : User
+    public class Employee : User
     {
-        string appointment;
-        DateTime startWorking;
+        private string appointment;
+        private DateTime startWorking;
+
+        public Employee()
+           : base()
+        {
+        }
 
         public string Appointment
         {
@@ -17,16 +22,11 @@ namespace Epam.Task3._5_Employee
             {
                 return this.appointment;
             }
+
             set
             {
-                this.appointment = CheckName(value);
+                this.appointment = this.CheckName(value);
             }
-        }
-
-        public Employee()
-            : base()
-        {
-
         }
 
         public DateTime StartWorking
@@ -35,9 +35,10 @@ namespace Epam.Task3._5_Employee
             {
                 return this.startWorking;
             }
+
             set
             {
-                if (value <= DateOfBirth)
+                if (value <= this.DateOfBirth)
                 {
                     throw new Exception("You not work before your birth");
                 }
@@ -52,7 +53,7 @@ namespace Epam.Task3._5_Employee
         {
             get
             {
-                return (DateTime.Now - StartWorking).TotalDays / 365;
+                return (DateTime.Now - this.StartWorking).TotalDays / 365;
             }
         }
     }

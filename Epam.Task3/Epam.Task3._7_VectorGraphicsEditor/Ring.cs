@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    class Ring : Round
+    public class Ring : Round
     {
         protected double radiusOther;
 
         public Ring()
             : base()
         {
-            name = "RING";
+            this.name = "RING";
             this.radiusOther = 2;
         }
 
         public Ring(double x1, double y1, double radius, double radiusOther)
         {
-            name = "RING";
+            this.name = "RING";
             this.x1 = x1;
             this.y1 = y1;
             if (radius > 0)
@@ -51,13 +51,17 @@ namespace Epam.Task3._7_VectorGraphicsEditor
             double radius = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter round 2nd radius");
             double radiusOther = double.Parse(Console.ReadLine());
-            Ring myRing = new Ring(x, y, radius, radiusOther);
-            return myRing;
+            return new Ring(x, y, radius, radiusOther);
         }
 
         public override void PrintFigure()
         {
             Console.WriteLine("Ring drawn");
+        }
+
+        public override string ToString()
+        {
+            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius №1: " + this.radius + ", radius №2: " + this.radiusOther + ")";
         }
     }
 }
