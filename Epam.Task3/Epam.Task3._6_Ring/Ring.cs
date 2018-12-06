@@ -42,6 +42,10 @@ namespace Epam.Task3._6_Ring
 
         public double RadiusOther
         {
+            set
+            {
+                this.radiusOther = value;
+            }
             get
             {
                 return this.radiusOther;

@@ -36,6 +36,10 @@ namespace Epam.Task3._6_Ring
 
         public double X
         {
+            set
+            {
+                this.x = value;
+            }
             get
             {
                 return this.x;
@@ -44,6 +48,10 @@ namespace Epam.Task3._6_Ring
 
         public double Y
         {
+            set
+            {
+                this.y = value;
+            }
             get
             {
                 return this.y;
@@ -52,6 +60,10 @@ namespace Epam.Task3._6_Ring
 
         public double Radius
         {
+            set
+            {
+                this.radius = value;
+            }
             get
             {
                 return this.radius;

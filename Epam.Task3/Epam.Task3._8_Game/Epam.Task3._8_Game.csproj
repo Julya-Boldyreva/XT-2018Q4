@@ -43,6 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BonusApple.cs" />
+    <Compile Include="BonusHoney.cs" />
+    <Compile Include="DifficultStone.cs" />
+    <Compile Include="DifficultTree.cs" />
+    <Compile Include="EnemyBear.cs" />
+    <Compile Include="EnemyWolf.cs" />
+    <Compile Include="Hero.cs" />
+    <Compile Include="IBonus.cs" />
+    <Compile Include="IDiffucult.cs" />
+    <Compile Include="IEnemy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
