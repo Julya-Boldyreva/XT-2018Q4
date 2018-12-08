@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task4._1_Lost", "Epam.Task4._1_Lost\Epam.Task4._1_Lost.csproj", "{161DA6B7-3E56-47B6-A309-B7D32AA0E833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task4._2_WordFrequency", "Epam.Task4._2_WordFrequency\Epam.Task4._2_WordFrequency.csproj", "{FE903A19-A30C-4FD7-A195-8E937292DB24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task4._3_DynamicArray", "Epam.Task4._3_DynamicArray\Epam.Task4._3_DynamicArray.csproj", "{0CA0E439-CE25-494A-847C-4DFECC8D8B2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.Task4._4_DynamicArrayHardcore", "Epam.Task4._4_DynamicArrayHardcore\Epam.Task4._4_DynamicArrayHardcore.csproj", "{2861C142-9508-4177-B1E7-941433B7BE0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{161DA6B7-3E56-47B6-A309-B7D32AA0E833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161DA6B7-3E56-47B6-A309-B7D32AA0E833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161DA6B7-3E56-47B6-A309-B7D32AA0E833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161DA6B7-3E56-47B6-A309-B7D32AA0E833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE903A19-A30C-4FD7-A195-8E937292DB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE903A19-A30C-4FD7-A195-8E937292DB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE903A19-A30C-4FD7-A195-8E937292DB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE903A19-A30C-4FD7-A195-8E937292DB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA0E439-CE25-494A-847C-4DFECC8D8B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA0E439-CE25-494A-847C-4DFECC8D8B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA0E439-CE25-494A-847C-4DFECC8D8B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA0E439-CE25-494A-847C-4DFECC8D8B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2861C142-9508-4177-B1E7-941433B7BE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2861C142-9508-4177-B1E7-941433B7BE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2861C142-9508-4177-B1E7-941433B7BE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2861C142-9508-4177-B1E7-941433B7BE0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A37E8142-A275-410F-B6BB-FB4C8E70981B}
+	EndGlobalSection
+EndGlobal

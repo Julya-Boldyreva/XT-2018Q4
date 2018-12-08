@@ -24,7 +24,11 @@ namespace Epam.Task3._4_MyString
         public MyString(string myStr)
             : this()
         {
-            this.MyStr = myStr.ToCharArray();
+            this.MyStr = new char[myStr.Length];
+            for (int i = 0; i < myStr.Length; i++)
+            {
+                this.myStr[i] = myStr[i];
+            }
         }
 
         public char[] MyStr
@@ -125,13 +129,53 @@ namespace Epam.Task3._4_MyString
 
         public int CompareTo(MyString ms)
         {
-            return this.MyStr.ToString().CompareTo(ms.ToString());
+            int res = 0;
+
+            if (ms.myStr.Length >= this.myStr.Length)
+            {
+                for (int i = 0; i < this.myStr.Length; i++)
+                {
+                    if (this.myStr[i] < ms.myStr[i])
+                    {
+                        return 1;
+                    }
+
+                    if (this.myStr[i] > ms.myStr[i])
+                    {
+                        return -1;
+                    }
+                }
+            }
+            else 
+            {
+                for (int i = 0; i < ms.myStr.Length; i++)
+                {
+                    if (this.myStr[i] < ms.myStr[i])
+                    {
+                        return 1;
+                    }
+
+                    if (this.myStr[i] > ms.myStr[i])
+                    {
+                        return -1;
+                    }
+                }
+            }
+
+            return res;
         }
 
         public int FindByChar(char ch)
         {
-            string s = new string(this.MyStr);
-            return s.IndexOf(ch);
+            for (int i = 0; i < this.MyStr.Length; i++)
+            {
+                if (this.MyStr[i] == ch)
+                {
+                    return i;
+                }
+            }
+            
+            return -1;
         }
 
         public char FindByInt(int i)
