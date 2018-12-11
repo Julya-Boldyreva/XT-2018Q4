@@ -11,10 +11,10 @@ namespace Epam.Task2._6_Font_Ajustment
         [Flags]
         public enum Font
         {
-            none = 0x0,
-            bold = 0x1,
-            italic = 0x2,
-            underline = 0x4
+            none = 0,
+            bold = 1,
+            italic = 2,
+            underline = 4
         }
 
         public static void Main(string[] args)
@@ -35,6 +35,7 @@ namespace Epam.Task2._6_Font_Ajustment
                     Console.WriteLine("------");
                     Console.WriteLine("(enter the number)");
                     switch_on = (Font)int.Parse(Console.ReadLine());
+
                     if (switch_on == (Font)3)
                     {
                         switch_on = (Font)4;

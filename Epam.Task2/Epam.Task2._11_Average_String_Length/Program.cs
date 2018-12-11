@@ -25,13 +25,11 @@ namespace Epam.Task2._11_Average_String_Length
 
             for (int i = 0; i < str.Length; i++)
             {
-                // separate in start
                 while (i <= str.Length - 1 && (char.IsPunctuation(str[i]) || char.IsSeparator(str[i])))
                 {
                     i++;
                 }
 
-                // some word
                 while (i <= str.Length - 1 && (!char.IsPunctuation(str[i]) && !char.IsSeparator(str[i])))
                 {
                     i++;

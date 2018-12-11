@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CycledDynamicArray.cs" />
+    <Compile Include="DynamicArray.cs" />
+    <Compile Include="ICycleShowble.cs" />
+    <Compile Include="IShowable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

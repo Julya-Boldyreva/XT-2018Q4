@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Epam.Task4._3_DynamicArray
+namespace Epam.Task4._4_DynamicArrayHardcore
 {
-    public class DynamicArray<T> : IEnumerable, IEnumerable<T>, IShowable
+    public class DynamicArray<T> : IEnumerable, IEnumerable<T>, ICloneable, IShowable
     {
-        private T[] array;
-        private int capacity;
-        private int last;
+        protected T[] array;
+        protected int capacity;
+        protected int last;
 
         public DynamicArray()
         {
@@ -52,9 +52,23 @@ namespace Epam.Task4._3_DynamicArray
 
         public int Capacity
         {
+
             get
             {
                 return this.capacity;
+            }
+            set
+            {
+                if (value < this.capacity)
+                {
+                    this.last = value;
+                }
+                else
+                { 
+                    this.last = capacity; 
+                }
+                this.capacity = value;
+                Array.Resize<T>(ref this.array, this.capacity);
             }
         }
 
@@ -62,7 +76,14 @@ namespace Epam.Task4._3_DynamicArray
         {
             get
             {
-                return this.array[i];
+                if (i >= 0)
+                {
+                    return this.array[i];
+                }
+                else
+                {
+                    return this.array[this.last + i];
+                }
             }
 
             set
@@ -145,8 +166,18 @@ namespace Epam.Task4._3_DynamicArray
 
             this.array[n] = elem;
             this.last += 1;
-            
+
             return flag;
+        }
+
+        public T[] ToArray()
+        {
+            T[] arr = new T[last];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = this.array[i];
+            }
+            return arr;
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -164,12 +195,17 @@ namespace Epam.Task4._3_DynamicArray
 
         public void Show()
         {
-            for (int i = 0; i < this.last; i++)      
+            for (int i = 0; i < this.last; i++)
             {
-                Console.Write($"{this.array[i]}  ");
+                Console.Write($"{this.array[i]} ");
             }
 
             Console.WriteLine();
+        }
+
+        public object Clone()
+        {
+            return new DynamicArray<T>(this.array);
         }
     }
 }
