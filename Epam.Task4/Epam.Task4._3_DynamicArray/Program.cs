@@ -11,26 +11,26 @@ namespace Epam.Task4._3_DynamicArray
         public static void Main(string[] args)
         {
             Console.WriteLine("Static program demonstrate own Dynamic Array");
-            DynamicArray<int> my_dynamic_arr = new DynamicArray<int>(new int[] { 0, 1, 2, 3, 4, 5, 6, 7 });
+            DynamicArray<int> myDynArr = new DynamicArray<int>(new int[] { 0, 1, 2, 3, 4, 5, 6, 7 });
 
             try
             {
                 Console.WriteLine("------");
                 Console.WriteLine("Array:");
-                my_dynamic_arr.Show();
+                myDynArr.Show();
                 Console.WriteLine("--Add number 66 in array--");
-                my_dynamic_arr.Add(66);
-                my_dynamic_arr.Show();
+                myDynArr.Add(66);
+                myDynArr.Show();
                 Console.WriteLine("--Add range {10, 11, 12} in array--");
-                my_dynamic_arr.AddRange(new int[] { 10, 11, 12 });
-                my_dynamic_arr.Show();
+                myDynArr.AddRange(new int[] { 10, 11, 12 });
+                myDynArr.Show();
                 Console.WriteLine("--Remove element at 0 index--");
-                my_dynamic_arr.Remove(0);
-                my_dynamic_arr.Show();
+                myDynArr.Remove(0);
+                myDynArr.Show();
                 Console.WriteLine("--Insert element at 0 index--");
-                my_dynamic_arr.Insert(120, 0);
-                my_dynamic_arr.Show();
-                Console.WriteLine($"------{Environment.NewLine}Length is {my_dynamic_arr.Length}, capacity is {my_dynamic_arr.Capacity} {Environment.NewLine}------");
+                myDynArr.Insert(120, 0);
+                myDynArr.Show();
+                Console.WriteLine($"------{Environment.NewLine}Length is {myDynArr.Length}, capacity is {myDynArr.Capacity} {Environment.NewLine}------");
             }
             catch (Exception e)
             {

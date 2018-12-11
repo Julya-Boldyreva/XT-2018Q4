@@ -52,11 +52,11 @@ namespace Epam.Task4._4_DynamicArrayHardcore
 
         public int Capacity
         {
-
             get
             {
                 return this.capacity;
             }
+
             set
             {
                 if (value < this.capacity)
@@ -65,8 +65,9 @@ namespace Epam.Task4._4_DynamicArrayHardcore
                 }
                 else
                 { 
-                    this.last = capacity; 
+                    this.last = this.capacity; 
                 }
+
                 this.capacity = value;
                 Array.Resize<T>(ref this.array, this.capacity);
             }
@@ -172,11 +173,12 @@ namespace Epam.Task4._4_DynamicArrayHardcore
 
         public T[] ToArray()
         {
-            T[] arr = new T[last];
+            T[] arr = new T[this.last];
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = this.array[i];
             }
+
             return arr;
         }
 

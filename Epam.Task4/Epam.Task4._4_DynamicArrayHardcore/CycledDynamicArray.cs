@@ -26,11 +26,25 @@ namespace Epam.Task4._4_DynamicArrayHardcore
         {
         }
 
+        private int Count
+        {
+            get
+            {
+                this.count++;
+                if (this.count >= this.last - 1)
+                {
+                    this.count = 0;
+                }
+
+                return this.count;
+            }
+        }
+
         public T this[int i]
         {
             get
             {
-                return this.array[Count];
+                return this.array[this.Count];
             }
 
             set
@@ -39,26 +53,11 @@ namespace Epam.Task4._4_DynamicArrayHardcore
             }
         }
 
-        public object Current => throw new NotImplementedException();
-
-        int Count
-        {
-            get
-            {
-                count++;
-                if (count >= last - 1)
-                {
-                    count = 0;
-                }
-                return this.count;
-            }
-        }
-
         public IEnumerator<T> GetEnumerator()
          {
             while (true)
             {
-                yield return this.array[Count];
+                yield return this.array[this.Count];
             }
          }
 
