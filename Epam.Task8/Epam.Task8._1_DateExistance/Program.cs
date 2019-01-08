@@ -13,7 +13,6 @@ namespace Epam.Task8._1_DateExistance
             try
             {
                 Console.WriteLine("This programe determines existiting dd-mm-yyyy date in the string");
-                Console.WriteLine("(program find just form, not content)");
                 Console.WriteLine("--------");
                 Console.WriteLine("Please, enter the string: ");
                 string str = Console.ReadLine();

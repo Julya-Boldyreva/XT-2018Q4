@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,21 @@ namespace Epam.Task7.DAL
     {
         private static Dictionary<string, User> repoUsers = new Dictionary<string, User>();
 
+        static UserDao()
+        {
+            repoUsers = FilesDao.Read();
+        }
+
         public void Add(User user)
         {
             repoUsers.Add(user.Id, user);
+            FilesDao.Add(repoUsers);
         }
 
         public void Delete(string id)
         {
             repoUsers.Remove(id);
+            FilesDao.Add(repoUsers);
         }
 
         public void DeleteByNo(int no)

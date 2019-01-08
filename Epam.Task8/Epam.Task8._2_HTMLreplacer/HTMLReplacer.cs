@@ -16,7 +16,7 @@ namespace Epam.Task8._2_HTMLreplacer
 
         private static string Replace(string str)
         {
-            string pattern = @"<[/]*[a-zA-Z]+>";
+            string pattern = @"<[/]?[a-zA-Z]+>";
             string underline = "_";
             Regex regex = new Regex(pattern);
             return regex.Replace(str, underline);

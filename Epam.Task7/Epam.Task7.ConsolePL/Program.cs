@@ -17,7 +17,7 @@ namespace Epam.Task7.ConsolePL
             {
                 var userLogic = Dependencies.UserLogic;
                 var awardLogic = Dependencies.AwardLogic;
-
+                
                 while (true)
                 {
                     Console.WriteLine("This is the program which can work with list of Users and Awards");

@@ -27,7 +27,7 @@ namespace Epam.Task8._4_NumberValidator
             }
             else
             {
-                pattern = @"^[\-\+]?[0-9]+([\.][0-9]+)*[e][\-\+]?[0-9]+$";
+                pattern = @"^[\-\+]?[0-9]+([\.][0-9]+)*[eE][\-\+]?[0-9]+$";
                 regex = new Regex(pattern);
                 matches = regex.Matches(str);
                 if (matches.Count == 1)

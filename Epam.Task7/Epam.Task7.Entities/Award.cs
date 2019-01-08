@@ -17,6 +17,12 @@ namespace Epam.Task7.Entities
             this.title = title;
         }
 
+        public Award(string id, string title)
+        {
+            this.id = id;
+            this.title = title;
+        }
+
         public string Title
         {
             get

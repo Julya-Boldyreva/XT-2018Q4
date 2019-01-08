@@ -12,6 +12,11 @@ namespace Epam.Task7.DAL
     {
         private static Dictionary<string, Award> repoAwards = new Dictionary<string, Award>();
 
+        static AwardDao()
+        {
+            repoAwards = FilesDao.ReadAward();
+        }
+
         public void Add(User user, Award award)
         {
             user.Awards.Add(award);
@@ -20,6 +25,7 @@ namespace Epam.Task7.DAL
         public void AddAward(Award award)
         {
             repoAwards.Add(award.Id, award);
+            FilesDao.AddAward(repoAwards);
         }
 
         public void Delete(User user, string awardId)

@@ -20,6 +20,21 @@ namespace Epam.Task7.Entities
             this.dateOfBirdth = GetDate(dateOfBirth);
         }
 
+        public User(string id, string name, string dateOfBirth)
+        {
+            this.id = id;
+            this.name = name;
+            this.dateOfBirdth = GetDate(dateOfBirth);
+        }
+
+        public User(string id, string name, string dateOfBirth, List<Award> awards)
+        {
+            this.id = id;
+            this.name = name;
+            this.dateOfBirdth = GetDate(dateOfBirth);
+            this.awards = awards;
+        }
+
         public string Name
         {
             get
