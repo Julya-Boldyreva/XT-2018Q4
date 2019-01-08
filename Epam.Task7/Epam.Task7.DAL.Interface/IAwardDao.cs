@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Epam.Task7.Entities;
+
+namespace Epam.Task7.DAL.Interface
+{
+    public interface IAwardDao
+    {
+        void Add(User user, Award award);
+
+        void AddAward(Award award);
+
+        void Delete(User user, string id);
+
+        Award GetById(string id);
+
+        Award GetByNo(int no);
+
+        IEnumerable<Award> GetAll();
+    }
+}
