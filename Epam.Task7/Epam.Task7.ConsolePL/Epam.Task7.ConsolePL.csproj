@@ -63,6 +63,10 @@
       <Project>{0004D99D-8624-461F-AFEC-FFAD7325C8B9}</Project>
       <Name>Epam.Task7.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Epam.Task7.DAL\Epam.Task7.DAL.csproj">
+      <Project>{FE857C48-1113-4CC8-A64D-757E1CE64839}</Project>
+      <Name>Epam.Task7.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epam.Task7.Entities\Epam.Task7.Entities.csproj">
       <Project>{f3285872-93bf-458b-90ff-77aaca7d3dea}</Project>
       <Name>Epam.Task7.Entities</Name>

@@ -21,19 +21,17 @@ namespace Epam.Task7.DAL
         public void Add(User user)
         {
             repoUsers.Add(user.Id, user);
-            FilesDao.Add(repoUsers);
         }
 
         public void Delete(string id)
         {
             repoUsers.Remove(id);
-            FilesDao.Add(repoUsers);
         }
 
         public void DeleteByNo(int no)
         {
             int count = 0;
-            string id = "";
+            string id = string.Empty;
             foreach (var item in repoUsers)
             {
                 if (count == no)
@@ -60,7 +58,7 @@ namespace Epam.Task7.DAL
         public User GetByNo(int no)
         {
             int count = 0;
-            string id = "";
+            string id = string.Empty;
             foreach (var item in repoUsers)
             {
                 if (count == no)

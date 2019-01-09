@@ -15,11 +15,70 @@ namespace Epam.Task7.DAL
 
         public static void Add(Dictionary<string, User> list)
         {
+            int co = 0;
             using (StreamWriter sw = new StreamWriter(path))
             {
                 foreach (var item in list)
                 {
                     sw.WriteLine($"{item.Value.Id}{Environment.NewLine}{item.Value.Name}{Environment.NewLine}{item.Value.DateOfBirth:dd.MM.yyyy}");
+                    if (item.Value.Awards.Count > 0)
+                    {
+                        foreach (var i in item.Value.Awards)
+                        {
+                            if (co < item.Value.Awards.Count)
+                            {
+                                sw.Write($"{i.Id}|{i.Title}|");
+                            }
+                            else
+                            {
+                                sw.Write($"{i.Id}|{i.Title}");
+                            }
+
+                            co++;
+                        }
+                    }
+                    else
+                    {
+                        sw.Write($"-|-");
+                    }
+
+                    sw.WriteLine();
+                    co = 0;
+                }
+            }
+        }
+
+        public static void Add(IEnumerable<User> list)
+        {
+            int co = 0;
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                foreach (var item in list)
+                {
+                    sw.WriteLine($"{item.Id}{Environment.NewLine}{item.Name}{Environment.NewLine}{item.DateOfBirth:dd.MM.yyyy}");
+                    if (item.Awards.Count > 0)
+                    {
+                        foreach (var i in item.Awards)
+                        {
+                            if (co < item.Awards.Count)
+                            {
+                                sw.Write($"{i.Id}|{i.Title}|");
+                            }
+                            else
+                            {
+                                sw.Write($"{i.Id}|{i.Title}");
+                            }
+
+                            co++;
+                        }
+                    }
+                    else
+                    {
+                        sw.Write($"-|-");
+                    }
+
+                    sw.WriteLine();
+                    co = 0;
                 }
             }
         }
@@ -51,10 +110,18 @@ namespace Epam.Task7.DAL
                     string id = sr.ReadLine();
                     string name = sr.ReadLine();
                     string dob = sr.ReadLine();
+                    string str = sr.ReadLine();
 
-                    User user = new User(id, name, dob);
+                    string[] arr = str.Split('|');
+                    List<Award> la = new List<Award>();
 
-                    res.Add(id, user);
+                    for (int i = 0; i < arr.Length - 1; i++)
+                    {
+                        la.Add(new Award(arr[i], arr[i + 1]));
+                        i++;
+                    }
+
+                    res.Add(id, new User(id, name, dob, la));
                 }
             }
 

@@ -52,7 +52,7 @@ namespace Epam.Task7.DAL
         public Award GetByNo(int no)
         {
             int count = 0;
-            string id = "";
+            string id = string.Empty;
             foreach (var item in repoAwards)
             {
                 if (count == no)

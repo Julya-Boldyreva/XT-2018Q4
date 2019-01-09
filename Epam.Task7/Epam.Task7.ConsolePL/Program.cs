@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Epam.Task7.BLL;
 using Epam.Task7.Common;
+using Epam.Task7.DAL;
 using Epam.Task7.Entities;
 
 namespace Epam.Task7.ConsolePL
@@ -28,7 +29,7 @@ namespace Epam.Task7.ConsolePL
                     Console.WriteLine("4. Show all awards");
                     Console.WriteLine("5. Add award to list");
                     Console.WriteLine("6. Add award to User");
-                    Console.WriteLine("0. Exit");
+                    Console.WriteLine("0. Save to file and Exit from program");
                     Console.WriteLine("Choose an option: ");
                     int choice = int.Parse(Console.ReadLine());
                     Console.WriteLine("--------");
@@ -122,7 +123,8 @@ namespace Epam.Task7.ConsolePL
                             break;
                         case 0:
                             {
-                            Environment.Exit(0);
+                                FilesDao.Add(userLogic.GetAll());
+                                Environment.Exit(0);
                             }
 
                             break;
