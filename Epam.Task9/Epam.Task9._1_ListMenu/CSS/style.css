@@ -1,0 +1,19 @@
+﻿ul{
+	list-style: none;
+	padding: 5px 10px;
+}
+
+li{
+	padding: 5px;
+}
+
+.list{
+	border-radius: 5px;
+	width: 200px;
+	margin: 20px;
+	color: #c70000;
+	background-color: #ffd800;
+	box-shadow: 5px 5px 0 0 #c70000;
+	border: 1px solid black;
+}
+

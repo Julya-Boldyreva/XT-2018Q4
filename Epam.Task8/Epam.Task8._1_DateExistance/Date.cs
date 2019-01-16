@@ -25,7 +25,7 @@ namespace Epam.Task8._1_DateExistance
         private static bool Exists(string str)
         {
             bool res = false;
-            Regex regex = new Regex(@"(((0[1-9]|[12][0-9]|3[01])\-(0[13578]|1[02])\-(\d{4}))|((0[1-9]|1[0-9]|2[0-9])\-02\-\d{4}) )|((0[1-9]|[12][0-9]|30)\-(0[469]|11)\-\d{4})");
+            Regex regex = new Regex(@"(((0[1-9]|[12][0-9]|3[01])\-(0[13578]|1[02])\-([0-9]{4}))|((0[1-9]|1[0-9]|2[0-9])\-02\-[0-9]{4}) )|((0[1-9]|[12][0-9]|30)\-(0[469]|11)\-[0-9]{4})");
             MatchCollection matches = regex.Matches(str);
             if (matches.Count > 0)
             {
