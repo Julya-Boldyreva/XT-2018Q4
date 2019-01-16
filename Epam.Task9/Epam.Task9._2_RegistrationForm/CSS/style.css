@@ -8,12 +8,26 @@
 }
 
 .form{
+	width: 450px;
 	margin: 20px;
 	color: white;
 	background-color: #007dff;
 	border: 5px solid #0063cc;
 }
 
+.email{
+	margin: 20px 20px 5px 20px;
+}
+
 .password{
-	
+	display: inline-block;
+	margin: 5px  20px 20px 20px;
+}
+
+.button{
+	margin: 0 20px;
+	padding: 5px 10px;
+	background-color: #fbec5d;
+	border: none;
+	outline: none; 
 }
