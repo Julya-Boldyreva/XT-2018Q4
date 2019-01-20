@@ -1,0 +1,33 @@
+﻿body{
+	background-color: black;
+}
+
+.container{
+	width: 500px;
+	margin: 0 auto;
+	padding: 0 10px 10px 10px;
+	border-radius: 0 0 10px 10px;
+	background: linear-gradient(#f7f7f7, #dedede);
+}
+
+.header{
+	width: 150px;
+	height: 40px;
+	background: black;
+	transform: skewX(-30deg);
+	position: relative;
+	left: -30px;
+}
+
+.title{
+	transform: skewX(30deg);
+	line-height: 40px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 700;
+	color: #ff9a2e;
+}
+
+p{
+  margin: 10px;
+}

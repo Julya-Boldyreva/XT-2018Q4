@@ -1,0 +1,79 @@
+﻿label{
+	display: inline-block;
+	width: 88px;
+	height: 24px;
+	float: left;
+	padding: 0 3px;
+	overflow: hidden;
+}  
+
+input[type=radio]{
+	display:none;
+}
+
+input[type=radio] + span{
+	*background-color: #d2d2d2; /*IE*/
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	text-align: center;
+	line-height: 25px;
+	font-size: 14px;
+	color: #141514;
+}
+
+input[type=radio]:checked + span{color:#EDF8E9}
+input[type=radio] + span:before,
+input[type=radio] + span:after{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height: 12px;
+	left: 0;
+	z-index: -1;
+}
+
+input[type=radio]:checked + span:before{
+	background: linear-gradient(#ade087,#64c51e);
+	top: 0;
+	-webkit-transform: skew(25deg);
+	-moz-transform: skew(25deg);
+	-o-transform: skew(25deg);
+	-ms-transform: skew(25deg);
+}
+
+input[type=radio]:checked + span:after{
+	background: linear-gradient(#64c51e,#ade087);
+	bottom: 0;
+	-webkit-transform: skew(-25deg);
+	-moz-transform: skew(-25deg);
+	-o-transform: skew(-25deg);
+	-ms-transform: skew(-25deg);
+}
+
+input[type=radio] + span:before{
+	background: linear-gradient(#ddd,#bfbfbf);
+	top: 0;
+	-webkit-transform: skew(25deg);
+	-moz-transform: skew(25deg);
+	-o-transform: skew(25deg);
+	-ms-transform: skew(25deg);
+}
+input[type=radio] + span:after{
+	background: linear-gradient(#bfbfbf,#ddd);
+	bottom: 0;
+	-webkit-transform: skew(-25deg);
+	-moz-transform: skew(-25deg);
+	-o-transform: skew(-25deg);
+	-ms-transform: skew(-25deg);
+}
+
+label:first-child input[type=radio] + span{
+	width: 98px;
+	left: -10px;
+}
+label:last-child input[type=radio] + span{
+	width: 98px;
+	left: 0;
+}

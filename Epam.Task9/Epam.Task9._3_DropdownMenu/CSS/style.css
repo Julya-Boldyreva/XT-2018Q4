@@ -16,8 +16,13 @@
     display: block;
 }
 
-.menu li:hover{
-	border-radius: 5px;
+.menu .li:hover{
+	border-radius: 5px 5px 0 0;
+	box-shadow: 
+	0 2px 2px 0 white,
+    2px 0 2px 0 #bababa,
+    -2px 0 2px 0 #bababa,
+    0 -1px 2px 0 #bababa;
 }
 
 .menu li:hover a{
@@ -37,9 +42,9 @@
 	width: 200px;
 }
 
-.menu li:hover ul{
+.menu li:hover .submenu{
     display:block;
-    left:0px;
+    box-shadow:0 0 5px 2px #b9b9b9;
 }
 
 .menu li:hover ul a{

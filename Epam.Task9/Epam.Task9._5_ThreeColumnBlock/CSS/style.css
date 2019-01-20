@@ -1,0 +1,60 @@
+﻿body{
+    background: #4e6379;
+}
+
+.choice{
+    width: 900px;
+    border-radius: 10px;
+    margin: 20px auto;
+    background: white;
+    justify-content: center;
+	box-shadow: 1px 20px 20px 5px #303D4B;
+}
+
+.boxone, .boxtwo, .boxthree{
+    width: 25%;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+	display: inline-block;
+}
+
+
+.boxone div{
+    width: 60px;
+	height: 42px;
+    margin: 0 auto;
+    background: url("../images/fon.png") no-repeat;
+    background-position: 0 0;
+}
+
+.boxtwo div{
+    width: 60px;
+	height: 42px;
+    margin: 0 auto;
+    background: url("../images/fon.png") no-repeat;
+    background-position: 0 -42px;
+}
+
+.boxthree div{
+    width: 60px;
+	height: 42px;
+    margin: 0 auto;
+    background: url("../images/fon.png") no-repeat;
+    background-position: 0 -84px;
+}
+
+.headers{
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff9900;
+}
+
+button {
+	height: 30px;
+    border-radius: 3px;
+	color: white;
+	background: darkorange;
+    border: 1px solid #ff9900;
+    outline: none;
+}

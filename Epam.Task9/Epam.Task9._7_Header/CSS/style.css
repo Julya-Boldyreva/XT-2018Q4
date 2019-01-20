@@ -1,0 +1,18 @@
+﻿.header{
+	width: 400px;
+	padding: 20px;
+	background-color: #008B66;
+	color: white;
+	font-size: 16pt;
+}
+
+.content{
+	position: relative;
+	width: 389px;
+	left: 30px;
+	padding: 10px;
+	top: -10px;
+	background-color: #dfe6e1;
+	font-size: 12pt;
+	border: 1px solid #fff;
+}
