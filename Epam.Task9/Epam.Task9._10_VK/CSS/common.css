@@ -1,0 +1,117 @@
+﻿hr{
+	border: 0.5px solid #dce0e0;
+}
+
+.header{
+	position: fixed;
+	width: 100%;
+	height: 42px;
+	margin: -10;
+	padding: 0;
+    background: #4a76a8; 
+	z-index: 9;
+}
+
+.left-menu{
+	float: left;
+	margin: 28px 0 0 0;
+	font-size: 13px;
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+.left-menu ul{
+	padding: 0;
+	margin-right: 10px;
+}
+.left-menu li{
+	width: 100%;
+	width: 100%;
+	padding: 0 0 0 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 2.5;
+}
+.left-menu li:hover{
+	background: #e1e5eb;
+	border-radius: 4px;
+}
+.left-menu a:hover{
+	text-decoration: none;
+}
+
+.right-menu{
+	float: left;
+	width: 230px;
+	margin: 42px 0 0 0;
+	background: white;
+	font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+	font-size: 13px;
+}
+.right-menu ul{
+	padding: 0;
+	margin-right: 10px;
+}
+.right-menu li{
+	width: 100%;
+	width: 100%;
+	padding: 0 0 0 30px;
+	line-height: 2.5;
+}
+.right-menu li:hover{
+	width: 200px;
+	background: #e1e5eb;
+}
+.right-menu a:hover{
+	text-decoration: none;
+}
+
+.search{
+	float: left;
+	width: 230px;
+    height: 28px;
+    padding: 6px 6px 6px 19px;
+    margin: 7px 0;
+	box-sizing: border-box;
+    line-height: 16px;
+	border: 0;
+	border-left: 8px solid transparent;
+    border-radius: 14px; 
+    background: #224b7a url("../images/search.png") no-repeat;
+	background-position: left 8px;
+	transition: background-color 0.05s, color 0.05s;
+}
+.search:focus{
+	background: white;
+	color: black;
+}
+
+.logo{
+    float: left;
+    padding: 4px 110px 0 20px; 
+}
+.bell{
+    float: left;
+    padding: 8px 15px 0 20px;
+}
+.nota{
+    float: left;
+	padding: 8px 8px 0 10px;
+}
+.music{
+    float: left;
+	padding: 8px 0 0 0;
+}
+
+.bell:hover, .nota:hover, .music:hover{
+	padding-bottom: -10px;
+	background: #3b5f87;
+}
+
+
+.selected{
+	border-left:2px solid #4a76a8; 
+	background: #e1e5eb;
+	font-weight: 700;
+}
+.selected a{
+	color: black;
+}

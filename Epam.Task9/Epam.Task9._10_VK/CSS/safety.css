@@ -1,0 +1,10 @@
+﻿.msg{
+	margin: 15px 0;
+	padding: 7px 18px 9px;
+	width: 460px;
+    font-size: 12.5px;
+	line-height: 150%;
+    border: 1px solid #c1c9d9;
+    border-radius: 2px;
+	background: #edeef0;
+}

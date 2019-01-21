@@ -1,0 +1,119 @@
+﻿body{
+	background: #edeef0;
+}
+
+a:link{
+	color: #273a8c;
+	text-decoration: none;
+}
+a:visited{
+	color: #273a8c;
+	text-decoration: none;
+}
+a:hover{
+	color: #273a8c;
+	text-decoration: underline;
+}
+a:active{
+	color: #273a8c;
+	text-decoration: underline;
+}
+
+li{
+	list-style-type: none;
+	line-height: 2;
+}
+
+.square{
+	display: inline-block;
+}
+
+label input {
+  display: none;
+}
+
+input[type="checkbox"] + .square:before {
+	width: 12px;
+	height: 12px;
+	content: "";
+	display: inline-block;
+	border: 1px solid #9db1cc;
+	border-radius: 3px;
+	font: 16px sans-serif;
+}
+
+input[type="checkbox"]:checked + .square:before {
+	width: 12px;
+	height: 12px;
+	content: "\2714";
+	line-height: 12px;
+	font-size:13px;
+	color: white;
+	background: #6292d1;
+}
+
+.container{
+    float: left;
+	display: block;
+	width: 550px;
+	margin: 43px 20px;
+	font-size: 13px;
+	text-align: left;
+    direction: ltr;
+	color: black;
+    line-height: 1.154;
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+	border-radius: 2px;
+}
+
+.common{
+	height: 30px;
+	padding: 10px 0 10px 20px;
+	background: #f5f5f5;
+	color: black;
+    font-size: 18px;
+	line-height:30px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.site-menu{
+	width: 530px;
+	margin: 0;
+	padding: 10px 0 10px 20px;
+	display: inline-block;
+	line-height:30px;
+	background: white;
+	border-bottom: 1px solid #e7e8ec;
+	box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.site-menu span{
+	float: left;
+    width: 145px;
+    padding: 6px 10px 6px 0;
+    color: #656565;
+    line-height: 16px;
+}
+
+.site-menu .list{
+	width: 400px;
+    padding: 0;
+	margin: -13px 0 0 -44px;
+	color: black;
+}
+
+.site-menu .just-info{
+	width: 270px;
+	color: black;
+}
+
+.site-menu .third-col{
+	width: 90px;
+}
+
+.site-menu .delete{
+	width: 400px;
+	padding: 0 0 0 153px;
+	color: black;
+}
