@@ -1,0 +1,34 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="JS/script.js"></script>
+		<title>
+			Удаление неуникальности в обществе
+		</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<p>
+					Перед Вами - демонстрация функции, на вход которой приходит строка, состоящая из нескольких слов (слова разделены пробельными символами и знаками препинания) и возвращающая строку, в которой будут удалены все символы, повторяющиеся хоть в одном из слов более одного раза. 
+				</p>
+				<p>
+					В поле ниже введите строку, из которой Вы хотите удалить повторяющиеся символы и нажмите на кнопку "Сделать мир лучше!"
+				</p>
+			</div>
+			<form>
+				<input type="text" id="str"/>
+			</form>
+			<button onclick="removeChars();">Сделать мир лучше!</button>
+			<div>
+				<b>Ввод:</b> 
+				<span id="text"></span>
+			</div>
+			<div>
+				<b>Результат:</b> 
+				<span id="res"></span>
+			</div>
+		</div>
+	</body>
+</html>

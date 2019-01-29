@@ -1,0 +1,39 @@
+﻿button{
+	margin: 5px;
+	height: 24px;
+	border: 1px solid black;
+    border-radius: 10px; 
+}
+
+select{
+	width: 400px;
+	height: 200px;
+	margin-left: 20px;
+	background-color: #afdafc;
+	border: 1px solid black;
+	border-radius: 10px;
+	font-size: 12pt;
+}
+
+.slct{
+	display: inline-block;
+}
+
+.title{
+	margin: 20px;
+	padding: 20px;
+	background-color: #9999ff;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.container{
+	margin: 20px;
+	padding: 20px;
+	background-color: #e0ffff;
+}
+
+.bts{
+	padding: 20px;
+	display: inline-block;
+}

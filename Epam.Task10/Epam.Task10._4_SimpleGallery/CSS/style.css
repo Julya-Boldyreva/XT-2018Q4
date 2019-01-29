@@ -1,0 +1,50 @@
+﻿button{
+	width: 150px;
+	height: 20px;
+	margin: 5px;
+	height: 24px;
+	border: 1px solid black;
+    border-radius: 10px; 
+}
+.bts{
+	margin: 20px;
+	padding: 20px;
+	display: inline-block;	
+}
+
+.cat{
+	margin: 20px 60px;
+	padding: 20px;
+	width: 200px;
+}
+
+.catdiv{
+	width: 300px;
+	display: inline-block;
+	background: white;
+	border: 1px solid black;
+	border-radius: 10px; 
+}
+
+.container{
+	margin: 20px;
+	padding: 20px;
+	background-color: #e0ffff;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.containerNo{
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+	background-color: #e0ffff;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.containerNo img{
+	height: 50%;
+	border: 1px solid black;
+	border-radius: 10px;
+}

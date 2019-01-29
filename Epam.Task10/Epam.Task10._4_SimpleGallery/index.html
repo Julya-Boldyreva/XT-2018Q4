@@ -1,0 +1,27 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="JS/script.js"></script>
+		<title>
+			Страница 0
+		</title>
+	</head>
+	<body  onload="clock()">
+		<div class="container">
+			<h2>Это страница №0</h2>
+			<p>Смотрите на этих милых котиков. Бо они символизирует время до вашей смерти</p>
+			<h3>Вы сдохните через:</h3>
+			<div class="bts">
+				<br /><button onClick="p0Count = 9;document.location.href = 'HTML/page1.html';clearTimeout(setTime);">Первая страница</button>
+				<br /><button onClick="p0Count = 9;document.location.href = 'HTML/page2.html';clearTimeout(setTime);">	Вторая страница</button>
+				<br /><button onClick="p0Count = 9;document.location.href = 'HTML/page3.html'; clearTimeout(setTime);">Третья страница</button>
+				<br /><button onClick="p0Count = 9;document.location.href = 'HTML/page4.html';clearTimeout(setTime);">Четвёртая страница</button>
+				<br /><button onClick="pause();">Стоп / продолжить</button>
+			</div>
+			<div class="catdiv">
+				<span name="tim" id="tim" class="cat"></span>
+			</div>
+		</div>
+	</body>
+</html>
