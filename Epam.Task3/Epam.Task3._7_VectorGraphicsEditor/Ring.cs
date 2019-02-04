@@ -13,13 +13,13 @@ namespace Epam.Task3._7_VectorGraphicsEditor
         public Ring()
             : base()
         {
-            this.name = "RING";
+            this.Name = "RING";
             this.radiusOther = 2;
         }
 
         public Ring(double x1, double y1, double radius, double radiusOther)
         {
-            this.name = "RING";
+            this.Name = "RING";
             this.x1 = x1;
             this.y1 = y1;
             if (radius > 0)
@@ -61,7 +61,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public override string ToString()
         {
-            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius №1: " + this.radius + ", radius №2: " + this.radiusOther + ")";
+            return this.Name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius №1: " + this.radius + ", radius №2: " + this.radiusOther + ")";
         }
     }
 }

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    public class DifficultTree : IDiffucult
+    public interface IEnemy
     {
-        public void Show(int a, int b)
-        {
-            throw new NotImplementedException();
-        }
+        void DestroyHero();
     }
 }

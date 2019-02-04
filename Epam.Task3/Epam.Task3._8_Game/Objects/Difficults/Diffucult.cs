@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    public class BonusApple : IBonus
+    public abstract class Diffucult
     {
+        private double xCoord;
+        private double yCoord;
+
+        public abstract void Show();
     }
 }

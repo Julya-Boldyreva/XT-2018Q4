@@ -26,6 +26,12 @@ namespace Epam.Task6.BackupSystem
                 DirectoryInfo di = Directory.CreateDirectory(backupDir);
                 di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
             }
+
+            if (!Directory.Exists(currentDir))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(currentDir);
+                di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            }
         }
 
         public static void CheckFolder(string dir)
@@ -78,10 +84,10 @@ namespace Epam.Task6.BackupSystem
 
         public static void ShowList()
         {
-            int i = 1;
+            int i = 0;
             foreach (var commit in currentFiles)
             {
-                Console.WriteLine($"id - [{commit.Id}], time - [{commit.Time.ToString("G")}]");
+                Console.WriteLine($"{i}. id - [{commit.Id}], time - [{commit.Time.ToString("G")}]");
                 i++;
             }
         }

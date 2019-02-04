@@ -12,7 +12,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Circle()
         {
-            this.name = "CIRCLE";
+            this.Name = "CIRCLE";
             this.x1 = 0;
             this.y1 = 0;
             this.radius = 1;
@@ -21,7 +21,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
         public Circle(double x1, double y1, double radius)
             : this()
         {
-            this.name = "CIRCLE";
+            this.Name = "CIRCLE";
             this.x1 = x1;
             this.y1 = y1;
             if (radius > 0)
@@ -52,7 +52,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public override string ToString()
         {
-            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius: " + this.radius + ")";
+            return this.Name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius: " + this.radius + ")";
         }
     }
 }

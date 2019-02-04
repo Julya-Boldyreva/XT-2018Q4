@@ -13,7 +13,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Line()
         {
-            this.name = "LINE";
+            this.Name = "LINE";
             this.x2 = 0;
             this.y2 = 0;
             this.x2 = 1;
@@ -22,7 +22,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Line(double x1, double y1, double x2, double y2)
         {
-            this.name = "LINE";
+            this.Name = "LINE";
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
@@ -49,7 +49,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public override string ToString()
         {
-            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "; " + this.x2 + ", " + this.x2 + "])";
+            return this.Name + " (coords: [" + this.x1 + ", " + this.y1 + "; " + this.x2 + ", " + this.x2 + "])";
         }
     }
 }

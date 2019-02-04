@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._7_VectorGraphicsEditor
 {
-    public class Figure : IFigure
+    public abstract class Figure : IFigure
     {
-        public string name = "-FIGURE-";
+        public string Name = "-FIGURE-";
 
         protected double x1;
         protected double y1;

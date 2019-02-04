@@ -13,7 +13,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Rectangle()
         {
-            this.name = "RECTANGLE";
+            this.Name = "RECTANGLE";
             this.x1 = 0;
             this.y1 = 0;
             this.a = 1;
@@ -22,7 +22,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Rectangle(double x1, double y1, double a, double b)
         {
-            this.name = "RECTANGLE";
+            this.Name = "RECTANGLE";
             this.x1 = x1;
             this.y1 = y1;
             this.a = a;
@@ -49,7 +49,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public override string ToString()
         {
-            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] width: " + this.a + ", height " + this.b + ")";
+            return this.Name + " (coords: [" + this.x1 + ", " + this.y1 + "] width: " + this.a + ", height " + this.b + ")";
         }
     }
 }

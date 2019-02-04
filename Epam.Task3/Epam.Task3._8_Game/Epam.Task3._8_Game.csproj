@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BonusApple.cs" />
-    <Compile Include="BonusHoney.cs" />
-    <Compile Include="DifficultStone.cs" />
-    <Compile Include="DifficultTree.cs" />
-    <Compile Include="EnemyBear.cs" />
-    <Compile Include="EnemyWolf.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Hero.cs" />
-    <Compile Include="IBonus.cs" />
-    <Compile Include="IDiffucult.cs" />
-    <Compile Include="IEnemy.cs" />
-    <Compile Include="IMovable.cs" />
-    <Compile Include="IShootable.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Hero\IHero.cs" />
+    <Compile Include="Objects\Bonuses\BonusApple.cs" />
+    <Compile Include="Objects\Bonuses\BonusHoney.cs" />
+    <Compile Include="Objects\Difficults\DifficultStone.cs" />
+    <Compile Include="Objects\Difficults\DifficultTree.cs" />
+    <Compile Include="Characters\Enemies\EnemyBear.cs" />
+    <Compile Include="Characters\Enemies\EnemyWolf.cs" />
+    <Compile Include="GameField\Game.cs" />
+    <Compile Include="Characters\Hero\Hero.cs" />
+    <Compile Include="Objects\Bonuses\Bonus.cs" />
+    <Compile Include="Objects\Difficults\Diffucult.cs" />
+    <Compile Include="Characters\Enemies\IEnemy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

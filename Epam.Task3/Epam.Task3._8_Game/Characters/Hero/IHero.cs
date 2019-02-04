@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    public class DifficultStone : IDiffucult
+    public interface IHero
     {
-        public void Show(int a, int b)
-        {
-            throw new NotImplementedException();
-        }
+        void Shoot(double xCoord, double yCoord);
+
+        void EatFruit();
     }
 }

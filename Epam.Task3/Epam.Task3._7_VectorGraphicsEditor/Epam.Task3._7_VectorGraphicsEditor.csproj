@@ -48,7 +48,6 @@
     <Compile Include="Figure.cs" />
     <Compile Include="IEditorable.cs" />
     <Compile Include="IFigure.cs" />
-    <Compile Include="IShootable.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

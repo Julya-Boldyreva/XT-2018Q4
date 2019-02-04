@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Epam.Task3._8_Game
 {
-    public class BonusHoney : IBonus
+    public abstract class Bonus
     {
+        private bool onField;
+        private double xCoord;
+        private double yCoord;
+
+        public abstract void Show();
     }
 }

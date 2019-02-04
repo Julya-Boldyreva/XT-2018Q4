@@ -25,12 +25,9 @@ namespace Epam.Task6.BackupSystem
                 Data.currentDir = s;
                 Console.WriteLine($"[Changed to {Data.currentDir}]");
             }
+
             Console.WriteLine("------------");
             Console.WriteLine($"Start of watching...{Environment.NewLine}If you don\'t want see after, press 0");
-            while (Console.ReadLine() != "0")
-            {
-            }
-
             FileSystemWatcher watcher = new FileSystemWatcher();
 
             watcher.Path = Data.currentDir;
@@ -41,8 +38,17 @@ namespace Epam.Task6.BackupSystem
             watcher.Renamed += new RenamedEventHandler(OnRenamed);
             watcher.IncludeSubdirectories = true;
             watcher.EnableRaisingEvents = true;
+            while (Console.ReadLine() != "0")
+            {
+            }
             // watcher.Dispose();
-
+            if (watcher != null)
+            {
+                watcher.Changed -= OnChanged;
+                watcher.Created -= OnChanged;
+                watcher.Deleted -= OnChanged;
+                watcher.Renamed -= OnRenamed;
+            }
             Console.WriteLine("End of watching. Press any key to return in main menu...");
             Console.ReadKey();
         }

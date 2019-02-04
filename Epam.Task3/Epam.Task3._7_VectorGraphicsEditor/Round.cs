@@ -12,7 +12,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public Round()
         {
-            this.name = "ROUND";
+            this.Name = "ROUND";
             this.x1 = 0;
             this.y1 = 0;
             this.radius = 1;
@@ -21,7 +21,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
         public Round(double x1, double y1, double radius, string color)
             : base(x1, y1, radius)
         {
-            this.name = "ROUND";
+            this.Name = "ROUND";
             this.color = color;
         }
 
@@ -45,7 +45,7 @@ namespace Epam.Task3._7_VectorGraphicsEditor
 
         public override string ToString()
         {
-            return this.name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius: " + this.radius + ", color: " + this.color + ")";
+            return this.Name + " (coords: [" + this.x1 + ", " + this.y1 + "] radius: " + this.radius + ", color: " + this.color + ")";
         }
     }
 }
