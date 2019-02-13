@@ -1,0 +1,48 @@
+﻿@using Epam.Task7.Entities;
+@using Epam.Task7.Common;
+@using Epam.Task7.DAL;
+
+
+<link href="~/CSS/userguest.css" rel="stylesheet" />
+<div class="list">
+    <h2>You are <span class="strong">USER</span> at our site</h2>
+
+    @{
+        var userLogic = Dependencies.UserLogic;
+        var list = userLogic.GetAll();
+
+        @:At all <span class="strong">@list.Count()</span> users: <br />
+        if (list.Count<User>() > 0)
+        {
+            @:<ol>
+                foreach (var item in list)
+                {
+                    @:<li>
+                        <span class="item">@item</span> <br /><span class="strong">Awards:</span><br />
+                        @:<ul>
+                            if (item.Awards.Count() < 1)
+                            {
+                                @:  <li></li>
+                            }
+                            else
+                            {
+                                foreach (var award in item.Awards)
+                                {
+                                    @:<li>@award</li>
+                                }
+                            }
+                        @:</ul>
+                    @:</li>
+                }
+            @:</ol>
+        }
+        else
+        {
+            @:No users in the list;
+        }
+        FilesDao.Add(userLogic.GetAll());
+    }
+
+
+    <a href="~/index.cshtml">back to <del>USSR</del> menu</a>
+</div>

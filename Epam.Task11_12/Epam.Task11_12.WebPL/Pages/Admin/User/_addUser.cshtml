@@ -1,0 +1,29 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+<form action="~/Pages/Admin/User/addUser.cshtml" method="post">
+    <label>Enter name of user that pretended to be added: </label><br />
+    <input type="text" name="fio2" id="fio2" /> <br />
+    <label>Enter date of birth: </label><br />
+    <input type="text" name="dob2" id="dob2" value="" /><br />
+    <button type="submit">Add User</button>
+    <a href="~/Pages/Admin/User/addUser.cshtml" class="update">Update the list</a> <br />
+</form>
+@{
+    var userLogic = Dependencies.UserLogic;
+    // var list = awardLogic.GetAll();
+    if (IsPost)
+    {
+        string fio2 = Request.Params["fio2"];
+        string dob2 = Request.Params["dob2"];
+        if (fio2 != "" && dob2 != "")
+        {
+            User user = new User(fio2, dob2);
+            userLogic.Add(user);
+        }
+        fio2 = "";
+        dob2 = "";
+    }
+}

@@ -1,0 +1,23 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+@{
+    var awardLogic = Dependencies.AwardLogic;
+    var list = awardLogic.GetAll();
+
+    @: At all <span class="strong">@list.Count()</span> awards:<br />
+    if (list.Count() > 0)
+    {
+        @:<ol>
+            foreach (var item in list)
+            {
+                @:<li> @item.Title </li>
+            }
+        @:</ol>
+    }
+    else
+    {
+        @: No awards in the list;
+    }
+}

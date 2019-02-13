@@ -1,0 +1,25 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<form action="~/Pages/Admin/Award/addAwardToUser.cshtml" method="post">
+    <label>Enter number of <span class="strong">user</span> whom pretended to be awarded: </label><br />
+    <input type="number" name="numuser" id="numuser" /><br />
+    <label>Enter number of <span class="strong">award</span> that pretended to be award: </label><br />
+    <input type="number" name="numaward" id="numaward" /><br />
+    <button type="submit">Add</button>
+    <a href="~/Pages/Admin/Award/addAwardToUser.cshtml" class="update">Update the list</a>
+</form>
+@{
+    var awardLogic = Dependencies.AwardLogic;
+    var users = Dependencies.UserLogic.GetAll();
+    if (IsPost)
+    {
+        int numuser = int.Parse(Request.Params["numuser"]);
+        int numaward = int.Parse(Request.Params["numaward"]);
+        if (numaward >=0 && numaward < awardLogic.GetAll().Count() && numuser >= 0 && numuser < users.Count())
+        {
+            awardLogic.AddToUser(Dependencies.UserLogic.GetByNo(numuser),awardLogic.GetByNo(numaward));
+        }
+    }
+}

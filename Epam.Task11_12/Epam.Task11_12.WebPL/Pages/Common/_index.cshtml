@@ -1,0 +1,56 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.DAL;
+
+@{
+    var loginDao = new LoginDao();
+}
+
+
+<div class="indexform">
+    <form action="~/index.cshtml" method="post">
+        <table>
+            <tr>
+                <td><label>Login: </label></td>
+                <td><input type="text" name="login" id="login" /></td>
+            </tr>
+            <tr>
+                <td><label>Password: </label></td>
+                <td><input type="password" name="password" id="password" value="" /></td>
+            </tr>
+        </table>
+        <button type="submit">Log in!</button>
+    </form>
+    <div>
+        <a href="~/Pages/Guest/User/showAllUsers.cshtml">- Log in as <span>guest</span></a>  (and sharp as HATE)<br />
+        <a href="~/Pages/Common/Registration.cshtml">- Registration</a>
+    </div>
+</div>
+@{
+    /*foreach (var item in LoginDao.usersList)
+    {
+        @: - @item.Name - @item.Password - @item.Role <br />
+    }*/
+
+}
+@{
+    if (IsPost)
+    {
+        string log = Request.Params["login"];
+        string pass = Request.Params["password"];
+
+        if (LoginDao.IsUser(log, pass))
+        {
+            Login usr = LoginDao.ReturnUser(log);
+            if (usr.Role == "admin")
+            {
+                Response.Redirect("~/Pages/Admin/index.cshtml");
+
+            }
+            else if (usr.Role == "user")
+            {
+                Response.Redirect("~/Pages/User/User/showAllUsers.cshtml");
+            }
+        }
+
+    }
+}

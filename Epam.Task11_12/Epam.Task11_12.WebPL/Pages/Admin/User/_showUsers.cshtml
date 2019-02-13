@@ -1,0 +1,41 @@
+﻿@using Epam.Task7.Entities;
+@using Epam.Task7.Common;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+
+@{
+    var userLogic = Dependencies.UserLogic;
+    var list = userLogic.GetAll();
+
+    @:At all <span class="strong">@list.Count()</span> users: <br />
+    if (list.Count<User>() > 0)
+    {
+        @:<ol>
+            foreach (var item in list)
+            {
+                @:<li>
+                    <span class="item">@item</span> <br /><span class="strong">Awards:</span><br />
+                    @:<ul>
+                        if (item.Awards.Count() < 1)
+                        {
+                            @:  <li></li>
+                        }
+                        else
+                        {
+                            foreach (var award in item.Awards)
+                            {
+                                @:<li>@award</li>
+                            }
+                        }
+                    @:</ul>
+                @:</li>
+            }
+        @:</ol>
+    }
+    else
+    {
+        @:No users in the list;
+    }
+    FilesDao.Add(userLogic.GetAll());
+}

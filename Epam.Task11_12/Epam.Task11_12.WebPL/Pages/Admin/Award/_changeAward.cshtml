@@ -1,0 +1,37 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+<form action="~/Pages/Admin/Award/changeAward.cshtml" method="post">
+    <label>Enter the number of award that pretended to be changeded: </label><br />
+    <input type="number" name="num3" id="num3" />
+    <button type="submit">Change Award</button>
+    <a href="~/Pages/Admin/Award/changeAward.cshtml" class="update">Update the list</a>
+    <br />
+    <label>Changed name: </label><br />
+    <input type="text" name="nam3" id="nam3" /><br />
+
+</form>
+@{
+    var awardLogic = Dependencies.AwardLogic;
+   // var list = awardLogic.GetAll();
+    if (IsPost)
+    {
+        string tmpNam = Request.Params["nam3"];
+        string tmpNum = Request.Params["num3"];
+        int num3 = -1;
+        string nam3 = "";
+        if (tmpNum.IsInt())
+        {
+            num3 = int.Parse(Request.Params["num3"]);
+            nam3 = Request.Params["nam3"];
+        }
+        if (num3 >= 0 && num3 <= awardLogic.GetAll().Count())
+        {
+            awardLogic.Change(num3, nam3);
+            num3 = -1;
+        }
+
+    }
+}

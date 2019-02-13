@@ -1,0 +1,33 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+<form action="~/Pages/Admin/Award/addAward.cshtml" method="post">
+    <label>Enter name of award that pretended to be added: </label><br />
+    <input type="text" name="nam2" id="nam2" /><br />
+    <!--<input type="file" accept="image/jpeg,image/png,image/gif"  name="fil" id="fil" />-->
+    <button type="submit">Add Award</button>
+    <a href="~/Pages/Admin/Award/addAward.cshtml" class="update">Update the list</a>
+</form>
+@{
+    /*
+    OpenFileDialog openDialog = new OpenFileDialog();
+    openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
+    if (openDialog.ShowDialog() != DialogResult.OK)
+    return;
+    image = Image.FromFile(openDialog.FileName);
+     */
+    var awardLogic = Dependencies.AwardLogic;
+    if (IsPost)
+    {
+        string nam2 = Request.Params["nam2"];
+        string fil = Request.Params["fil"];
+        if (nam2 != "")
+        {
+            Award award = new Award(nam2);
+            awardLogic.AddToAwards(award);
+        }
+        nam2 = "";
+    }
+}

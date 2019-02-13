@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/CSS/admin.css" rel="stylesheet" />
+    <title>Admin demands: change user, !#$%* !</title>
+</head>
+<body>
+    <div class="list">
+        @RenderPage("~/Pages/Admin/User/_showUsers.cshtml")
+        @RenderPage("~/Pages/Admin/User/_changeUser.cshtml")
+        <div class="">
+            <br />
+            <span class="strong">You may:</span><br />
+            <a href="~/Pages/Admin/User/addUser.cshtml">Add User</a>|
+            <a href="~/Pages/Admin/User/removeUser.cshtml">Remove User</a>|
+            <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add Award to User</a>
+        </div>
+        <a href="~/Pages/Admin/index.cshtml">back to <del>USSR</del> menu</a>
+    </div>
+</body>
+</html>

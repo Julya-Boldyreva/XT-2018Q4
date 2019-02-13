@@ -1,0 +1,47 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/CSS/userguest.css" rel="stylesheet" />
+    <title>Guest | See only users mode</title>
+</head>
+<body>
+    <div class="list">
+        @RenderPage("~/Pages/Guest/User/_showUsers.cshtml")
+
+        <a href="~/index.cshtml">back to <del>USSR</del> menu</a>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--
+<div class="slct">
+    <select id="select1" multiple>
+        <option value="1">1. Солнечный зайчик стеклянного глаза</option>
+        <option value="2">2. Солнечный зайчик незрячего глаза</option>
+        <option value="3">3. Траурный мячик нелепого мира</option>
+        <option value="4">4. Траурный мячик дешёвого мира</option>
+    </select>
+</div>
+<div class="bts">
+    <button onclick="allToRight();">&#9668;&#9668;</button><br />
+    <button onclick="oneToRight();">&#9668;</button><br />
+    <button onclick="oneToLeft();">&#9658;</button><br />
+    <button onclick="allToLeft();">&#9658;&#9658;</button>
+</div>
+<div class="slct">
+    <select id="select2" multiple></select>
+</div>
+-->

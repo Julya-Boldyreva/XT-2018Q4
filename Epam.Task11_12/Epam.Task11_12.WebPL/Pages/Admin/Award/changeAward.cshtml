@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/CSS/admin.css" rel="stylesheet" />
+    <title>Admin demands: change Award, !#$%^* !</title>
+</head>
+<body>
+    <div class="list">
+        <h2>You are <span class="strong">ADMIN</span> (Lord and Master of everything)</h2>
+        <div>
+            @RenderPage("~/Pages/Admin/Award/_showAward.cshtml")
+            @RenderPage("~/Pages/Admin/Award/_changeAward.cshtml")
+            <div>
+                <span class="strong">You may:</span><br />
+                <a href="~/Pages/Admin/Award/addAward.cshtml">Add award to List</a>|
+                <a href="~/Pages/Admin/Award/removeAward.cshtml">Remove Award</a>|
+                <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add Award to User</a>
+            </div>
+            <br />
+            <a href="~/Pages/Admin/index.cshtml">back to <del>USSR</del> menu</a>
+        </div>
+    </div>
+</body>
+</html>

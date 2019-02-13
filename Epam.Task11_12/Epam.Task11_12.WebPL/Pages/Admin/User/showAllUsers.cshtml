@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/CSS/admin.css" rel="stylesheet" />
+    <title>Admin demands: show all users, !#$%* !</title>
+</head>
+<body>
+    <div class="list">
+            <h2>You are <span class="strong">ADMIN</span> (Lord and Master of everything)</h2>
+            @RenderPage("~/Pages/Admin/User/_showUsers.cshtml")
+            <br />
+        <div>
+            <span class="strong">You may:</span><br />
+            <a href="~/Pages/Admin/User/addUser.cshtml">Add User</a>|
+            <a href="~/Pages/Admin/User/changeUser.cshtml">Change User</a>|
+            <a href="~/Pages/Admin/User/removeUser.cshtml">Remove User</a>|
+            <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add Award to User</a>
+        </div>
+        <br />
+        <a href="~/Pages/Admin/index.cshtml">back to <del>USSR</del> menu</a>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--
+<div class="slct">
+    <select id="select1" multiple>
+        <option value="1">1. Солнечный зайчик стеклянного глаза</option>
+        <option value="2">2. Солнечный зайчик незрячего глаза</option>
+        <option value="3">3. Траурный мячик нелепого мира</option>
+        <option value="4">4. Траурный мячик дешёвого мира</option>
+    </select>
+</div>
+<div class="bts">
+    <button onclick="allToRight();">&#9668;&#9668;</button><br />
+    <button onclick="oneToRight();">&#9668;</button><br />
+    <button onclick="oneToLeft();">&#9658;</button><br />
+    <button onclick="allToLeft();">&#9658;&#9658;</button>
+</div>
+<div class="slct">
+    <select id="select2" multiple></select>
+</div>
+-->

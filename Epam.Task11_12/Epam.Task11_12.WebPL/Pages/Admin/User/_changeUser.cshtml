@@ -1,0 +1,57 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+<form action="~/Pages/Admin/User/changeUser.cshtml" method="post">
+    <label>Enter the number of user that pretended to be changeded: </label><br />
+    <input type="number" name="num3" id="num3" />
+    <button type="submit">Change User</button>
+    <a href="~/Pages/Admin/User/changeUser.cshtml" class="update">Update the list</a> <br />
+    <label>Changed name: </label><br />
+    <input type="text" name="fio3" id="fio3" /><br />
+    <label>Changed date (dd.mm.yyyy): </label><br />
+    <input type="text" name="dob3" id="dob3" /><br />
+
+</form>
+@{
+    var userLogic = Dependencies.UserLogic;
+    // var list = awardLogic.GetAll();
+    if (IsPost)
+    {
+        string tmpNum = Request.Params["num3"];
+        string tmpFio = "";
+        string tmpDob = "";
+        int no = -1;
+
+        if (tmpNum.IsInt())
+        {
+            no = int.Parse(tmpNum);
+            tmpFio = userLogic.GetByNo(no).Name;
+            tmpDob = userLogic.GetByNo(no).DateOfBirth.ToString("d");
+        }
+        if (no >= 0 && no <= userLogic.GetAll().Count())
+        {
+
+            string fio = Request.Params["fio3"];
+            string dob = Request.Params["dob3"];
+            if (fio == "" && dob == "")
+            {
+            }
+            else if (fio == "")
+            {
+                userLogic.Change(no, tmpFio, dob);
+            }
+            else if (dob == "")
+            {
+                userLogic.Change(no, fio, tmpDob);
+            }
+            else
+            {
+                userLogic.Change(no, fio, dob);
+            }
+            no = -1;
+        }
+
+    }
+}

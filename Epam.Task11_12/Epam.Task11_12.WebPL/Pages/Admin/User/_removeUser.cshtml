@@ -1,0 +1,32 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.Entities;
+@using Epam.Task7.DAL;
+
+<link href="~/CSS/admin.css" rel="stylesheet" />
+<form action="~/Pages/Admin/User/removeUser.cshtml" method="post">
+    <label>Enter the number of user that pretended to be deleted: </label><br />
+    <input type="number" name="num1" id="num1" />
+    <button type="submit">Delete User</button> 
+    <a href="~/Pages/Admin/User/removeUser.cshtml" class="update">Update the list</a>
+</form>
+<br />
+@{
+    var userLogic = Dependencies.UserLogic;
+    // var list = awardLogic.GetAll();
+    if (IsPost)
+    {
+        string tmp = Request.Params["num1"];
+        int num1 = -1;
+        if (tmp.IsInt())
+        {
+            num1 = int.Parse(Request.Params["num1"]);
+        }
+        if (num1 >= 0 && num1 <= userLogic.GetAll().Count())
+        {
+            userLogic.DeleteByNo(num1);
+            num1 = -1;
+            // @:<p>Award is deleted! (update the list)</p>
+        }
+
+    }
+}

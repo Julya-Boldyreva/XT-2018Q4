@@ -1,0 +1,35 @@
+﻿a {
+    color: #66d9ff;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: Consolas;
+}
+
+a:hover {
+    color: white;
+    background-color: #00005c;
+}
+
+.strong {
+    color: #66d9ff;
+}
+
+
+ul li {
+    list-style-type: disc;
+}
+
+.item {
+    color: white;
+}
+
+.list {
+    margin: 10px auto;
+    padding: 50px;
+    width: 350px;
+    color: #007dff;
+    font-family: Consolas;
+    font-weight: bold;
+    background: #00008b;
+    border-radius: 10px;
+}

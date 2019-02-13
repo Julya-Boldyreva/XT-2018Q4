@@ -1,0 +1,46 @@
+﻿@using Epam.Task7.Common;
+@using Epam.Task7.DAL;
+
+@{
+    /**/
+
+    var loginDao = new LoginDao();
+}
+<link href="~/CSS/index.css" rel="stylesheet" />
+<div class="regform">
+    <form action="~/Pages/Common/Registration.cshtml" method="post">
+        <h2>Registration</h2>
+        <table>
+            <tr>
+                <td><label>Login: </label></td>
+                <td><input type="text" name="login" id="login" /></td>
+            </tr>
+            <tr>
+                <td><label>Password: </label></td>
+                <td><input type="password" name="password" id="password" /></td>
+            </tr>
+        </table>
+        <button type="submit">Register!</button>
+    </form>
+    @{
+        if (IsPost)
+        {
+            string log = Request.Params["login"];
+            string pass = Request.Params["password"];
+            string role = "user";
+            if (!LoginDao.IsUser(log, pass))
+            {
+                Login usr = new Login(log, pass, role);
+                LoginDao.AddToFileNewUser(usr);
+                @: <p class="ok">You've successefully registrated!</p>
+            }
+            else
+            {
+                @: <p class="notok">It is couldn't to be registrated</p>
+            }
+
+        }
+    }
+
+    <a href="~/index.cshtml">back to <del>USSR</del> menu</a>
+</div>
