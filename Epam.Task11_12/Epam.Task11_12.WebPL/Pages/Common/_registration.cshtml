@@ -3,8 +3,7 @@
 
 @{
     /**/
-
-    var loginDao = new LoginDao();
+    var loginLogic = Dependencies.LoginLogic;
 }
 <link href="~/CSS/index.css" rel="stylesheet" />
 <div class="regform">
@@ -28,10 +27,10 @@
             string log = Request.Params["login"];
             string pass = Request.Params["password"];
             string role = "user";
-            if (!LoginDao.IsUser(log, pass))
+            if (!loginLogic.IsUser(log, pass))
             {
                 Login usr = new Login(log, pass, role);
-                LoginDao.AddToFileNewUser(usr);
+                loginLogic.AddToFileNewUser(usr);
                 @: <p class="ok">You've successefully registrated!</p>
             }
             else

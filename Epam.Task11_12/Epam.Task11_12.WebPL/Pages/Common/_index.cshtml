@@ -2,7 +2,7 @@
 @using Epam.Task7.DAL;
 
 @{
-    var loginDao = new LoginDao();
+    var loginLogic = Dependencies.LoginLogic;
 }
 
 
@@ -26,10 +26,10 @@
     </div>
 </div>
 @{
-    /*foreach (var item in LoginDao.usersList)
-    {
-        @: - @item.Name - @item.Password - @item.Role <br />
-    }*/
+/*foreach (var item in LoginDao.usersList)
+{
+    @: - @item.Name - @item.Password - @item.Role <br />
+}*/
 
 }
 @{
@@ -38,9 +38,9 @@
         string log = Request.Params["login"];
         string pass = Request.Params["password"];
 
-        if (LoginDao.IsUser(log, pass))
+        if (loginLogic.IsUser(log, pass))
         {
-            Login usr = LoginDao.ReturnUser(log);
+            Login usr = loginLogic.ReturnUser(log);
             if (usr.Role == "admin")
             {
                 Response.Redirect("~/Pages/Admin/index.cshtml");

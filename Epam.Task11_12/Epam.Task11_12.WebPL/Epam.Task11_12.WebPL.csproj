@@ -130,6 +130,14 @@
     <Content Include="Pages\Common\_registration.cshtml" />
     <Content Include="Pages\Common\Registration.cshtml" />
     <Content Include="Pages\Admin\index.cshtml" />
+    <Content Include="Pages\Admin\Login\_addLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\_changeLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\_removeLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\_showLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\addLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\changeLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\removeLogin.cshtml" />
+    <Content Include="Pages\Admin\Login\showLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -23,6 +23,10 @@ namespace Epam.Task7.Common
 
         private static IAwardLogic awardLogic;
 
+        private static ILoginDao loginDao;
+
+        private static ILoginLogic loginLogic;
+
 
         public static IUserDao UserDao
         {
@@ -80,8 +84,39 @@ namespace Epam.Task7.Common
             }
         }
 
+        public static ILoginDao LoginDao
+        {
+            get
+            {
+                if (loginDao == null)
+                {
+                    switch (key.ToLower())
+                    {
+                        case "file":
+                            {
+                                loginDao = new LoginDao();
+                                break;
+                            }
+                        case "db":
+                            {
+                                loginDao = new LoginDBDao();
+                                break;
+                            }
+
+                        default:
+                            throw new Exception("Invalid app data source configuration");
+                    }
+                }
+
+                return loginDao;
+            }
+        }
+
+
         public static IUserLogic UserLogic => userLogic ?? (userLogic = new UserLogic(UserDao));
 
         public static IAwardLogic AwardLogic => awardLogic ?? (awardLogic = new AwardLogic(AwardDao));
+
+        public static ILoginLogic LoginLogic => loginLogic ?? (loginLogic = new LoginLogic(LoginDao));
     }
 }

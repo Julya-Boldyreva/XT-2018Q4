@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam.Task7.DAL.Interface;
 using Epam.Task7.Entities;
 
 namespace Epam.Task7.DAL
 {
-    public class LoginDao
+    public class LoginDao : ILoginDao
     {
         private static string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Login.txt");
         public static List<Login> usersList = new List<Login>();
@@ -24,7 +25,7 @@ namespace Epam.Task7.DAL
         }
 
 
-        public static void AddToFileAll()
+        public void AddToFileAll()
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
@@ -35,13 +36,13 @@ namespace Epam.Task7.DAL
             }
         }
             
-        public static void AddToFileNewUser(Login user)
+        public void AddToFileNewUser(Login user)
         {
             usersList.Add(user);
             AddToFileAll();
         }
 
-        public static void Read()
+        public void Read()
         {
             if (!File.Exists(path))
             {
@@ -60,7 +61,7 @@ namespace Epam.Task7.DAL
             }
         }
 
-        public static bool IsUser(string name, string password)
+        public bool IsUser(string name, string password)
         {
             Read();
             bool res = false;
@@ -76,12 +77,24 @@ namespace Epam.Task7.DAL
             return res;
         }
 
-        public static Login ReturnUser(string name)
+        public Login ReturnUser(string name)
         {
             Read();
             Login res = usersList.Find(a => a.Name == name);
             return res;
         }
 
+        public void Delete(Login user)
+        {
+        }
+
+        public void Change(int no, string newname, string newpass, string newrole)
+        {
+        }
+
+        public Login GetByNo(int no)
+        {
+            return null;
+        }
     }
 }

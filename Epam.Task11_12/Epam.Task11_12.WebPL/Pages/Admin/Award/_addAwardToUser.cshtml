@@ -21,5 +21,6 @@
         {
             awardLogic.AddToUser(Dependencies.UserLogic.GetByNo(numuser),awardLogic.GetByNo(numaward));
         }
+        Response.Redirect("~/Pages/Admin/Award/addAwardToUser.cshtml");
     }
 }

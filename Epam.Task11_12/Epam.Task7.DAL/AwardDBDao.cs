@@ -30,7 +30,7 @@ namespace Epam.Task7.DAL
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 var command = sqlConnection.CreateCommand();
-                command.CommandText = "INSERT INTO useraward (id_user, id_award) VALUES (\'" + user.Id + "," + award.Id + "\')";
+                command.CommandText = "INSERT INTO useraward (id_user, id_award) VALUES (" + user.Id + "," + award.Id + ")";
                 command.CommandType = CommandType.Text;
 
                 sqlConnection.Open();
@@ -91,7 +91,7 @@ namespace Epam.Task7.DAL
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 var command = sqlConnection.CreateCommand();
-                command.CommandText = "DELETE FROM useraward WHERE useraward.id_award = " +  user.Id + "AND useraward.id_user = " + id;
+                command.CommandText = "DELETE FROM useraward WHERE useraward.id_award = " + id + ";DELETE FROM award WHERE id_award = " + id;
                 command.CommandType = CommandType.Text;
 
                 sqlConnection.Open();
@@ -163,6 +163,7 @@ namespace Epam.Task7.DAL
         {
             repoAwards.Clear();
             var result = new List<Award>();
+
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 var command = sqlConnection.CreateCommand();

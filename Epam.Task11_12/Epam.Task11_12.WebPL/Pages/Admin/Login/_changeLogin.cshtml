@@ -15,7 +15,7 @@
 </form>
 @{
     var awardLogic = Dependencies.AwardLogic;
-    // var list = awardLogic.GetAll();
+   // var list = awardLogic.GetAll();
     if (IsPost)
     {
         string tmpNam = Request.Params["nam3"];
@@ -33,6 +33,5 @@
             num3 = -1;
         }
 
-        Response.Redirect("~/Pages/Admin/Award/changeAward.cshtml");
     }
 }
