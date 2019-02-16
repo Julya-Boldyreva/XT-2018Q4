@@ -27,6 +27,12 @@ namespace Epam.Task7.Entities
             this.title = title;
         }
 
+        public Award(int id, string title)
+        {
+            this.id = id.ToString();
+            this.title = title;
+        }
+
        /* public Award(string title, string path)
         {
             this.id = $"A{DateTime.Now:ddMMyyyyHHmmssffff}";
