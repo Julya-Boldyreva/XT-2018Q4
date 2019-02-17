@@ -3,18 +3,20 @@
 @using Epam.Task7.DAL;
 
 @{
-    var awardLogic = Dependencies.AwardLogic;
-    var list = awardLogic.GetAll();
+    var loginLogic = Dependencies.LoginLogic;
+    loginLogic.Read();
 
-    @: At all <span class="strong">@list.Count()</span> awards:<br />
-    if (list.Count() > 0)
+    @: At all <span class="strong">@LoginDBDao.usersList.Count()</span> users:<br />
+    if (LoginDBDao.usersList.Count() > 0)
     {
-        @:<ol>
-            foreach (var item in list)
+        int no = 1;
+        @:<style>td {border: 1px solid white;}</style><table> <tr><td style="color: white;">no</td><td style="color: white;">name</td><td style="color: white;">password</td><td style="color: white;">role</td></tr>
+            foreach (var item in LoginDBDao.usersList)
             {
-                @:<li> @item.Title </li>
+                @:<tr><td style="color: white;">@no</td><td>@item.Name</td><td>@item.Password</td><td>@item.Role</td></tr>
+                no++;
             }
-        @:</ol>
+        @:</table>
     }
     else
     {

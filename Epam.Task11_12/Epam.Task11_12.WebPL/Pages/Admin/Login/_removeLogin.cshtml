@@ -3,30 +3,27 @@
 @using Epam.Task7.DAL;
 
 <link href="~/CSS/admin.css" rel="stylesheet" />
-<form action="~/Pages/Admin/Award/removeAward.cshtml" method="post">
-    <label>Enter the number of award that pretended to be deleted: </label> <br />
+<form action="~/Pages/Admin/Login/removeLogin.cshtml" method="post">
+    <label>Enter the number of Login that pretended to be deleted: </label> <br />
     <input type="number" name="num1" id="num1" /><br />
-    <button type="submit">Delete Award</button>
-    <a href="~/Pages/Admin/Award/removeAward.cshtml" class="update">Update the list</a>
+    <button type="submit">Delete Login</button>
+    <a href="~/Pages/Admin/Login/removeLogin.cshtml" class="update">Update the list</a>
     <br />
 </form>
 @{
-    var awardLogic = Dependencies.AwardLogic;
-    // var list = awardLogic.GetAll();
+    var loginLogic = Dependencies.LoginLogic;
+    loginLogic.Read();
+
     if (IsPost)
     {
-        string tmp = Request.Params["num1"];
-        int num1 = -1;
-        if (tmp.IsInt())
+        int num1 = int.Parse(Request.Params["num1"]);
+        if (num1 >= 0 && num1 <= LoginDBDao.usersList.Count())
         {
-            num1 = int.Parse(Request.Params["num1"]);
-        }
-        if (num1 >= 0 && num1 <= awardLogic.GetAll().Count())
-        {
-            awardLogic.DeleteFromAwards(num1);
+            Login user = loginLogic.GetByNo(num1);
+            loginLogic.Delete(user);
             num1 = -1;
-            // @:<p>Award is deleted! (update the list)</p>
         }
 
+        Response.Redirect("~/Pages/Admin/Login/removeLogin.cshtml");
     }
 }

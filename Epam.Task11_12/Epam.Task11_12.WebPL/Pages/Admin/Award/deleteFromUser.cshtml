@@ -1,8 +1,4 @@
-﻿@using Epam.Task7.Common;
-@using Epam.Task7.Entities;
-@using Epam.Task7.DAL;
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -12,29 +8,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/CSS/admin.css" rel="stylesheet" />
-    <title>Admin demands: show awards, !#$%^* !</title>
+    <title>Admin demands: remove Award from User, !#$%^* !</title>
 </head>
 <body>
-    <div class="list">
+    <div class="listtable">
         <h2>You are <span class="strong">ADMIN</span> (Lord and Master of everything)</h2>
-        @RenderPage("~/Pages/Admin/Award/_showAward.cshtml")
-
+        <table>
+            <tr>
+                <td style="float: left;">@RenderPage("~/Pages/Admin/Award/_showAward.cshtml")</td>
+                <td style="float: right;">@RenderPage("~/Pages/Admin/User/_showUsers.cshtml")</td>
+            </tr>
+        </table>
+        @RenderPage("~/Pages/Admin/Award/_deleteFromUser.cshtml")
         <div>
             <span class="strong">You may:</span><br />
-            <a href="~/Pages/Admin/Award/addAward.cshtml">Add Award to List</a>|
+            <a href="~/Pages/Admin/Award/addAward.cshtml">Add award to List</a>|
             <a href="~/Pages/Admin/Award/changeAward.cshtml">Change Award</a>|
             <a href="~/Pages/Admin/Award/removeAward.cshtml">Remove Award</a>|
-            <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add Award to User</a>|
-            <a href="~/Pages/Admin/Award/deleteFromUser.cshtml">Remove Award from List</a>
+            <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add award to User</a>|
         </div>
         <br />
         <a href="~/Pages/Admin/index.cshtml">back to <del>USSR</del> menu</a>
     </div>
 </body>
 </html>
-
-
-
-
-
-

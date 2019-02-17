@@ -13,7 +13,7 @@ namespace Epam.Task7.BLL.Interface
 
         void AddToAwards(Award award);
 
-        //void AddAwardWithImg(Award award);
+        ////void AddAwardWithImg(Award award);
 
         void DeleteFromAwards(int no);
 

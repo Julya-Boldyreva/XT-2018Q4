@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Epam.Task7.DAL.Interface;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Epam.Task7.DAL
 {
@@ -17,25 +17,24 @@ namespace Epam.Task7.DAL
 
         public LoginDBDao()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-            Read();
-            if (!IsUser("admin", "admin"))
+            this._connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+            this.Read();
+            if (!this.IsUser("admin", "admin"))
             {
                 Login usr = new Login("admin", "admin", "admin");
-                AddToFileNewUser(usr);
+                this.AddToFileNewUser(usr);
             }
         }
 
         public void AddToFileAll()
         {
-            
         }
 
         public void AddToFileNewUser(Login user)
         {
             usersList.Add(user);
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "INSERT INTO logins (login, pasword, role) VALUES (\'" + user.Name+ "\',\'" + user.Password + "\', \'" + user.Role + "\')";
@@ -51,7 +50,7 @@ namespace Epam.Task7.DAL
         {
             usersList.Clear();
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "SELECT * FROM logins";
@@ -62,15 +61,16 @@ namespace Epam.Task7.DAL
 
                 while (reader.Read())
                 {
-                    usersList.Add(new Login(reader["login"]+"", reader["pasword"] == DBNull.Value ? "" : reader["pasword"] + "", reader["role"]+""));
+                    usersList.Add(new Login(reader["login"]+"", reader["pasword"] == DBNull.Value ? "" : reader["pasword"] + "", reader["role"] + ""));
                 }
+
                 sqlConnection.Close();
             }
         }
 
         public bool IsUser(string name, string password)
         {
-            Read();
+            this.Read();
             bool res = false;
             Login tmp = usersList.Find(a => a.Name == name);
             if (tmp != null)
@@ -86,7 +86,7 @@ namespace Epam.Task7.DAL
 
         public Login ReturnUser(string name)
         {
-            Read();
+            this.Read();
             Login res = usersList.Find(a => a.Name == name);
             return res;
         }
@@ -94,12 +94,12 @@ namespace Epam.Task7.DAL
         public void Delete(Login user)
         {
             usersList.Clear();
-            Read();
+            this.Read();
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
-                command.CommandText = "DELETE FROM logins WHERE login = " + user.Name;
+                command.CommandText = "DELETE FROM logins WHERE login = \'" + user.Name + "\'";
                 command.CommandType = CommandType.Text;
 
                 sqlConnection.Open();
@@ -108,19 +108,19 @@ namespace Epam.Task7.DAL
             }
 
             usersList.Clear();
-            Read();
+            this.Read();
         }
 
         public void Change(int no, string newname, string newpass, string newrole)
         {
             usersList.Clear();
-            Read();
-            Login login = GetByNo(no);
+            this.Read();
+            Login login = this.GetByNo(no);
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
-                command.CommandText = "UPDATE logins SET login = \'" + newname + "\', pasword = \'" + newpass + "\', role\'" + newrole + "\'  WHERE login = " + login.Name;
+                command.CommandText = "UPDATE logins SET login = \'" + newname + "\', pasword = \'" + newpass + "\', role = \'" + newrole + "\'  WHERE login = \'" + login.Name + "\'";
                 command.CommandType = CommandType.Text;
 
                 sqlConnection.Open();
@@ -129,13 +129,13 @@ namespace Epam.Task7.DAL
             }
 
             usersList.Clear();
-            Read();
+            this.Read();
         }
 
         public Login GetByNo(int no)
         {
             usersList.Clear();
-            Read();
+            this.Read();
 
             int count = 0;
 

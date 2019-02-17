@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using System.Drawing;
 
 namespace Epam.Task7.Entities
 {
@@ -12,13 +12,15 @@ namespace Epam.Task7.Entities
     {
         private string id;
         private string title;
-       // private string img;
+
+       //// private string img;
 
         public Award(string title)
         {
             this.id = $"A{DateTime.Now:ddMMyyyyHHmmssffff}";
             this.title = title;
-           // this.img = ImgToStr("C:\\Users\\Юля\\Documents\\GitHub\\XT-2018Q4\\Epam.Task11_12\\Epam.Task11_12.WebPL\\App_Data\\Images\\default_ava.png");
+
+           //// this.img = ImgToStr("C:\\Users\\Юля\\Documents\\GitHub\\XT-2018Q4\\Epam.Task11_12\\Epam.Task11_12.WebPL\\App_Data\\Images\\default_ava.png");
         }
 
         public Award(string id, string title)
@@ -61,27 +63,22 @@ namespace Epam.Task7.Entities
             }
         }
 
-       /* public Image Img
-        {
-            get
-            {
-                return StrToImg(this.img);
-            }
-        }
+        /* public Image Img
+         {
+             get
+             {
+                 return StrToImg(this.img);
+             }
+         }
 
-        public string StrImg
-        {
-            get
-            {
-                return this.img;
-            }
-        }
-        */
-
-        public override string ToString()
-        {
-            return $"{Title} ";
-        }
+         public string StrImg
+         {
+             get
+             {
+                 return this.img;
+             }
+         }
+         */
 
         public static string ImgToStr(string filename)
         {
@@ -97,6 +94,11 @@ namespace Epam.Task7.Entities
             byte[] arrayimg = Convert.FromBase64String(StrImg);
             Image imageStr = Image.FromStream(new MemoryStream(arrayimg));
             return imageStr;
+        }
+
+        public override string ToString()
+        {
+            return $"{Title} ";
         }
     }
 }

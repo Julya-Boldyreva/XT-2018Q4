@@ -27,7 +27,6 @@ namespace Epam.Task7.Common
 
         private static ILoginLogic loginLogic;
 
-
         public static IUserDao UserDao
         {
             get
@@ -111,7 +110,6 @@ namespace Epam.Task7.Common
                 return loginDao;
             }
         }
-
 
         public static IUserLogic UserLogic => userLogic ?? (userLogic = new UserLogic(UserDao));
 

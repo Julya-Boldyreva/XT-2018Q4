@@ -62,8 +62,10 @@ namespace Epam.Task7.DAL
                 {
                     id = item.Key;
                 }
+
                 count++;
             }
+
             repoAwards.Remove(id);
             FilesDao.AddAward(repoAwards);
         }

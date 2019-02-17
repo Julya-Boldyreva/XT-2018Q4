@@ -3,12 +3,16 @@
 @using Epam.Task7.DAL;
 
 <link href="~/CSS/admin.css" rel="stylesheet" />
-<form action="~/Pages/Admin/Award/addAward.cshtml" method="post">
-    <label>Enter name of award that pretended to be added: </label><br />
-    <input type="text" name="nam2" id="nam2" /><br />
+<form action="~/Pages/Admin/Login/addLogin.cshtml" method="post">
+    <label>Enter Login that pretended to be added: </label><br />
+    <input type="text" name="nam" id="nam" /><br />
+    <label>Enter Password For Login: </label><br />
+    <input type="text" name="pas" id="pas" /><br />
+    <label>Enter Role For Login (type "admin" or "user"): </label><br />
+    <input type="text" name="rol" id="rol" /><br />
     <!--<input type="file" accept="image/jpeg,image/png,image/gif"  name="fil" id="fil" />-->
-    <button type="submit">Add Award</button>
-    <a href="~/Pages/Admin/Award/addAward.cshtml" class="update">Update the list</a>
+    <button type="submit">Add new Login</button>
+    <a href="~/Pages/Admin/Login/addLogin.cshtml" class="update">Update the list</a>
 </form>
 @{
     /*
@@ -18,16 +22,22 @@
     return;
     image = Image.FromFile(openDialog.FileName);
      */
-    var awardLogic = Dependencies.AwardLogic;
+    var loginLogic = Dependencies.LoginLogic;
+    loginLogic.Read();
+
     if (IsPost)
     {
-        string nam2 = Request.Params["nam2"];
-        string fil = Request.Params["fil"];
-        if (nam2 != "")
+        string nam = Request.Params["nam"];
+        string pas = Request.Params["pas"];
+        string rol = Request.Params["rol"];
+        if (nam != "" && rol !="")
         {
-            Award award = new Award(nam2);
-            awardLogic.AddToAwards(award);
+            Login user = new Login(nam, pas, rol);
+            loginLogic.AddToFileNewUser(user);
         }
-        nam2 = "";
+        nam = "";
+        pas = "";
+        rol = "";
+        Response.Redirect("~/Pages/Admin/Login/addLogin.cshtml");
     }
 }

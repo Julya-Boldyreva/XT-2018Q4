@@ -13,7 +13,7 @@ namespace Epam.Task7.DAL.Interface
 
         void AddAward(Award award);
 
-       // void AddAwardWithImg(Award award);
+       //// void AddAwardWithImg(Award award);
 
         void DeleteFromAwards(int no);
 

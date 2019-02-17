@@ -16,14 +16,13 @@ namespace Epam.Task7.DAL
 
         public LoginDao()
         {
-            Read();
-            if (!IsUser("admin", "admin"))
+            this.Read();
+            if (!this.IsUser("admin", "admin"))
             {
                 Login usr = new Login("admin", "admin", "admin");
-                AddToFileNewUser(usr);
+                this.AddToFileNewUser(usr);
             }
         }
-
 
         public void AddToFileAll()
         {
@@ -39,7 +38,7 @@ namespace Epam.Task7.DAL
         public void AddToFileNewUser(Login user)
         {
             usersList.Add(user);
-            AddToFileAll();
+            this.AddToFileAll();
         }
 
         public void Read()
@@ -63,7 +62,7 @@ namespace Epam.Task7.DAL
 
         public bool IsUser(string name, string password)
         {
-            Read();
+            this.Read();
             bool res = false;
             Login tmp = usersList.Find(a => a.Name == name);
             if (tmp != null)
@@ -79,7 +78,7 @@ namespace Epam.Task7.DAL
 
         public Login ReturnUser(string name)
         {
-            Read();
+            this.Read();
             Login res = usersList.Find(a => a.Name == name);
             return res;
         }

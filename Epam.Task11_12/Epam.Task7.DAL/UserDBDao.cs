@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Epam.Task7.Entities;
 using Epam.Task7.DAL.Interface;
 
@@ -18,13 +19,13 @@ namespace Epam.Task7.DAL
 
         public UserDBDao()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
-            GetAll();
+            this._connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
+            this.GetAll();
         }
 
         public void Add(User user)
         {
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "INSERT INTO users (name, birth) VALUES (\'" + user.Name + "\', \'" + user.DateOfBirth + "\'); INSERT INTO useraward (id_user) VALUES (IDENT_CURRENT(\'users\'))";
@@ -36,17 +37,17 @@ namespace Epam.Task7.DAL
             }
 
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
         }
 
         public void Change(int no, string newname, string newdate)
         {
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
 
-            User user = GetByNo(no);
+            User user = this.GetByNo(no);
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "UPDATE users SET name = \'" + newname + "\', birth = \'" + newdate + "\' WHERE id_user = " + user.Id;
@@ -58,12 +59,12 @@ namespace Epam.Task7.DAL
             }
 
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
         }
 
         public void Delete(string id)
         {
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "DELETE FROM useraward WHERE useraward.id_user = " + id + ";DELETE FROM users WHERE id_user = " + id; 
@@ -78,20 +79,21 @@ namespace Epam.Task7.DAL
         public void DeleteByNo(int no)
         {
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
             int count = 0;
 
             foreach (var item in repoUsers)
             {
                 if (count == no - 1)
                 {
-                    Delete(item.Value.Id);
+                    this.Delete(item.Value.Id);
                 }
 
                 count++;
             }
+
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
         }
 
         public IEnumerable<User> GetAll()
@@ -99,7 +101,7 @@ namespace Epam.Task7.DAL
             repoUsers.Clear();
             var result = new List<User>();
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            using (var sqlConnection = new SqlConnection(this._connectionString))
             {
                 var command = sqlConnection.CreateCommand();
                 command.CommandText = "SELECT users.id_user, users.name, users.birth, award.id_award, award.title FROM award, users, useraward WHERE useraward.id_award = award.id_award AND useraward.id_user = users.id_user UNION SELECT users.id_user, users.name, users.birth, null, null FROM useraward, users WHERE useraward.id_user = users.id_user AND useraward.id_award IS NULL";
@@ -110,7 +112,7 @@ namespace Epam.Task7.DAL
 
                 while (reader.Read())
                 {
-                    User u = new User(reader["id_user"]+"", reader["name"] +"", ((DateTime)reader["birth"]).ToString("d"));
+                    User u = new User(reader["id_user"] + "", reader["name"] + "", ((DateTime)reader["birth"]).ToString("d"));
                     Award a = new Award(reader["id_award"] == DBNull.Value ? "" : reader["id_award"] + "", reader["title"] + "");
                     if (!repoUsers.ContainsKey(u.Id))
                     {
@@ -121,8 +123,8 @@ namespace Epam.Task7.DAL
                     {
                         repoUsers[u.Id].Awards.Add(a);
                     }
-
                 }
+
                 sqlConnection.Close();
             }
 
@@ -137,7 +139,7 @@ namespace Epam.Task7.DAL
         public User GetById(string id)
         {
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
 
             foreach (var item in repoUsers)
             {
@@ -153,7 +155,7 @@ namespace Epam.Task7.DAL
         public User GetByNo(int no)
         {
             repoUsers.Clear();
-            GetAll();
+            this.GetAll();
 
             int count = 0;
 

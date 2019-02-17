@@ -140,6 +140,7 @@ namespace Epam.Task7.DAL
             {
                 return res;
             }
+
             using (StreamReader sr = new StreamReader(path))
             {
                 while (!sr.EndOfStream)

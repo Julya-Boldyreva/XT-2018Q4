@@ -138,6 +138,8 @@
     <Content Include="Pages\Admin\Login\changeLogin.cshtml" />
     <Content Include="Pages\Admin\Login\removeLogin.cshtml" />
     <Content Include="Pages\Admin\Login\showLogin.cshtml" />
+    <Content Include="Pages\Admin\Award\_deleteFromUser.cshtml" />
+    <Content Include="Pages\Admin\Award\deleteFromUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

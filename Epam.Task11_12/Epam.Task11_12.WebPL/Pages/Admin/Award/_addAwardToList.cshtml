@@ -11,13 +11,15 @@
     <a href="~/Pages/Admin/Award/addAward.cshtml" class="update">Update the list</a>
 </form>
 @{
+    /**/
+
     /*
     OpenFileDialog openDialog = new OpenFileDialog();
     openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
     if (openDialog.ShowDialog() != DialogResult.OK)
     return;
     image = Image.FromFile(openDialog.FileName);
-     */
+        */
     var awardLogic = Dependencies.AwardLogic;
     if (IsPost)
     {

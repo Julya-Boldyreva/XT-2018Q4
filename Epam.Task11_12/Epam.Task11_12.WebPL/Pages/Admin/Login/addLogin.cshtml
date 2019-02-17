@@ -8,18 +8,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/CSS/admin.css" rel="stylesheet" />
-    <title>Admin demands: add Award to list, !#$%^* !</title>
+    <title>Admin demands: add Login, !#$%^* !</title>
 </head>
 <body>
     <div class="list">
         <h2>You are <span class="strong">ADMIN</span> (Lord and Master of everything)</h2>
-        @RenderPage("~/Pages/Admin/Award/_showAward.cshtml")
-        @RenderPage("~/Pages/Admin/Award/_addAwardToList.cshtml")
+        @RenderPage("~/Pages/Admin/Login/_showLogin.cshtml")
+        @RenderPage("~/Pages/Admin/Login/_addLogin.cshtml")
         <div>
             <span class="strong">You may:</span><br />
-            <a href="~/Pages/Admin/Award/changeAward.cshtml">Change Award</a>|
-            <a href="~/Pages/Admin/Award/removeAward.cshtml">Remove Award</a>|
-            <a href="~/Pages/Admin/Award/addAwardToUser.cshtml">Add Award to User</a>
+            <a href="~/Pages/Admin/Login/removeLogin.cshtml">Remove Login</a>|
+            <a href="~/Pages/Admin/Login/changeLogin.cshtml">Change Login</a>
         </div>
         <br />
         <a href="~/Pages/Admin/index.cshtml">back to <del>USSR</del> menu</a>

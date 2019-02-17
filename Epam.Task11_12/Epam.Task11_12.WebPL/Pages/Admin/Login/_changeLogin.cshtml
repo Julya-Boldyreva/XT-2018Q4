@@ -3,35 +3,46 @@
 @using Epam.Task7.DAL;
 
 <link href="~/CSS/admin.css" rel="stylesheet" />
-<form action="~/Pages/Admin/Award/changeAward.cshtml" method="post">
-    <label>Enter the number of award that pretended to be changeded: </label><br />
-    <input type="number" name="num3" id="num3" />
-    <button type="submit">Change Award</button>
-    <a href="~/Pages/Admin/Award/changeAward.cshtml" class="update">Update the list</a>
+<form action="~/Pages/Admin/Login/changeLogin.cshtml" method="post">
+    <label>Enter the number of Login that pretended to be changeded: </label><br />
+    <input type="number" name="num" id="num" />
+    <button type="submit">Change Login</button>
+    <a href="~/Pages/Admin/Login/changeLogin.cshtml" class="update">Update the list</a>
     <br />
-    <label>Changed name: </label><br />
-    <input type="text" name="nam3" id="nam3" /><br />
+    <label>Changed Login: </label><br />
+    <input type="text" name="nam" id="nam" /><br />
+    <label>Changed password: </label><br />
+    <input type="text" name="pas" id="pas" /><br />
+    <label>Changed Role (type "admin" or "user"): </label><br />
+    <input type="text" name="rol" id="rol" /><br />
 
 </form>
 @{
-    var awardLogic = Dependencies.AwardLogic;
-   // var list = awardLogic.GetAll();
+    var loginLogic = Dependencies.LoginLogic;
+    loginLogic.Read();
+
     if (IsPost)
     {
-        string tmpNam = Request.Params["nam3"];
-        string tmpNum = Request.Params["num3"];
-        int num3 = -1;
-        string nam3 = "";
-        if (tmpNum.IsInt())
+        int num = int.Parse(Request.Params["num"]);
+
+        string nam = Request.Params["nam"];
+        string pas = Request.Params["pas"];
+        string rol = Request.Params["rol"];
+        if (nam != "" && rol != "")
         {
-            num3 = int.Parse(Request.Params["num3"]);
-            nam3 = Request.Params["nam3"];
+            Login user = new Login(nam, pas, rol);
+            loginLogic.AddToFileNewUser(user);
         }
-        if (num3 >= 0 && num3 <= awardLogic.GetAll().Count())
+        if (num >= 0 && num <= LoginDBDao.usersList.Count())
         {
-            awardLogic.Change(num3, nam3);
-            num3 = -1;
+            Login user = loginLogic.GetByNo(num);
+            loginLogic.Change(num, nam == "" ? user.Name : nam, pas, rol == "" ? user.Role : rol);
+
         }
+        nam = "";
+        pas = "";
+        rol = "";
+        Response.Redirect("~/Pages/Admin/Login/changeLogin.cshtml");
 
     }
 }
